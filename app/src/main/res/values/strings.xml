@@ -1,0 +1,31 @@
+<resources>
+    // App name
+    <string name="app_name">COVID-19 STATS</string>
+
+    // StartScreen
+    <string name="protect_yourself">Protect Yourself and Others</string>
+    <string name="wear_mask">Wear mask</string>
+    <string name="wash_hand">Wash hand</string>
+    <string name="keep_distance">Keep distance</string>
+    <string name="startBtn">Get Started</string>
+
+    // StatsFragment
+    <string name="active">Active</string>
+    <string name="recovered">Recovered</string>
+    <string name="total">Total</string>
+    <string name="deaths">Deaths</string>
+    <string name="covid_19">Covid-19</string>
+    <string name="country">Country</string>
+    <string name="cases">Cases</string>
+    <string name="increment_number">+123456</string>
+    <string name="number">0123456789</string>
+
+    // AffectedCountry
+    <string name="search">Search Country</string>
+
+    // MyCustomAdapter
+    <string name="country_name">Country Name</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
