@@ -1,13 +1,16 @@
 package com.hfad.something;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -35,6 +38,22 @@ public class AffectedCountry extends Fragment {
 
         // Manually add data for one country
         addCountryData();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i >= 0 && i < AffectedCountry.countryModelList.size()) {
+                    Intent intent = new Intent(requireActivity(), CountryDetailActivity.class);
+                    intent.putExtra("position", i);
+                    startActivity(intent);
+                } else {
+                    // Handle invalid position
+                    Log.e("AffectedCountry", "Invalid position: " + i);
+                }
+            }
+        });
+
+
 
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override

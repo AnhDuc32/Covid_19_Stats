@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Something"
         tools:targetApi="31">
         <activity
+            android:name=".CountryDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".AffectedCountry"
             android:exported="false" />
         <activity
