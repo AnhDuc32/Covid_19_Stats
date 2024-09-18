@@ -33,7 +33,7 @@ android {
 
 dependencies {
 
-    implementation("com.squareup.retrofit2.retrofit:2.9.0")
+    implementation(libs.retrofit)
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.hbb20:ccp:2.7.0")
     implementation("com.github.blackfizz:eazegraph:1.2.2@aar")
