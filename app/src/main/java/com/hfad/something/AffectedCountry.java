@@ -2,12 +2,16 @@ package com.hfad.something;
 
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
@@ -15,6 +19,7 @@ import java.util.List;
 
 public class AffectedCountry extends Fragment {
     public static List<CountryModel> countryModelList = new ArrayList<>();
+
     CountryModel countryModel;
     MyCustomAdapter myCustomAdapter;
     ListView listView;
@@ -31,10 +36,30 @@ public class AffectedCountry extends Fragment {
         // Manually add data for one country
         addCountryData();
 
+        edtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                myCustomAdapter.getFilter().filter(charSequence);
+                myCustomAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
         return view;
     }
 
     private void addCountryData() {
+        countryModelList.clear();
+
         countryModel = new CountryModel(
                 R.drawable.vietnam, // Flag
                 "Vietnam", // Country name

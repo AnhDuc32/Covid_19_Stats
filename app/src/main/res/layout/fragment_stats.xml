@@ -219,7 +219,7 @@
                     android:layout_height="60dp"
                     android:layout_margin="5dp"
                     app:strokeWidth="2dp"
-                    android:backgroundTint="@color/card_background"
+                    android:backgroundTint="@color/color_two"
                     app:strokeColor="#0C0F45">
 
                     <LinearLayout
@@ -274,7 +274,7 @@
                     android:layout_height="60dp"
                     android:layout_margin="5dp"
                     app:strokeWidth="2dp"
-                    android:backgroundTint="@color/card_background"
+                    android:backgroundTint="@color/color_two"
                     app:strokeColor="#0C0F45">
 
                     <LinearLayout
@@ -329,7 +329,7 @@
                     android:layout_height="60dp"
                     android:layout_margin="5dp"
                     app:strokeWidth="2dp"
-                    android:backgroundTint="@color/card_background"
+                    android:backgroundTint="@color/color_two"
                     app:strokeColor="#0C0F45">
 
                     <LinearLayout
@@ -384,7 +384,7 @@
                     android:layout_height="60dp"
                     android:layout_margin="5dp"
                     app:strokeWidth="2dp"
-                    android:backgroundTint="@color/card_background"
+                    android:backgroundTint="@color/color_two"
                     app:strokeColor="#0C0F45">
 
                     <LinearLayout
