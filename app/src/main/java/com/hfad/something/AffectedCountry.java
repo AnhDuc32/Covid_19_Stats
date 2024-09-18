@@ -42,14 +42,9 @@ public class AffectedCountry extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i >= 0 && i < AffectedCountry.countryModelList.size()) {
-                    Intent intent = new Intent(requireActivity(), CountryDetailActivity.class);
-                    intent.putExtra("position", i);
-                    startActivity(intent);
-                } else {
-                    // Handle invalid position
-                    Log.e("AffectedCountry", "Invalid position: " + i);
-                }
+                Intent intent = new Intent(requireActivity(), CountryDetailActivity.class);
+                intent.putExtra("position", i);
+                startActivity(intent);
             }
         });
 
