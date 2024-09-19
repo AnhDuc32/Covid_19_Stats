@@ -41,9 +41,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return "GLOBAL";
             case 1:
-                return "COUNTRIES";
+                return "COUNTRY";
             case 2:
-                return "SIGNS & SYMPTOMS";
+                return "SYMPTOMS";
             default:
                 return null;
         }
