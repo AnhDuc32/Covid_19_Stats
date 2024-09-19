@@ -145,7 +145,7 @@ public class StatsFragment extends Fragment {
                 break;
         }
 
-        LineDataSet dataSet = new LineDataSet(entries, "Statisticss");
+        LineDataSet dataSet = new LineDataSet(entries, "Statistics");
         dataSet.setColor(getResources().getColor(android.R.color.holo_blue_bright));
         dataSet.setValueTextColor(Color.BLACK);
         dataSet.setDrawCircles(true);
