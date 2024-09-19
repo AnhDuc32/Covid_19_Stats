@@ -59,131 +59,6 @@
 
             </GridLayout>
 
-            <!--LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <org.eazegraph.lib.charts.PieChart
-                    android:id="@+id/piechart"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.55"
-                    android:layout_height="200dp"
-                    android:padding="4dp"
-                    app:egLegendTextSize="15dp"
-                    app:egUsePieRotation="true"
-                    app:egValueTextSize="20dp"/>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="0.45"
-                    android:layout_height="200dp"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal">
-
-                        <View
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:background="@drawable/view_drawable"
-                            android:layout_gravity="center"
-                            android:backgroundTint="@color/yellow" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/total"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:textSize="20dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_gravity="center" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal">
-
-                        <View
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:background="@drawable/view_drawable"
-                            android:layout_gravity="center"
-                            android:backgroundTint="@color/blue" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/recovered"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:textSize="20dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_gravity="center" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal">
-
-                        <View
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:background="@drawable/view_drawable"
-                            android:layout_gravity="center"
-                            android:backgroundTint="@color/red" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/deaths"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:textSize="20dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_gravity="center" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal">
-
-                        <View
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:background="@drawable/view_drawable"
-                            android:layout_gravity="center"
-                            android:backgroundTint="@color/green" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/active"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:textSize="20dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_gravity="center" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </LinearLayout-->
-
         </LinearLayout>
 
     </RelativeLayout>
@@ -404,7 +279,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
             </GridLayout>
-
+        
     </RelativeLayout>
 
     <RelativeLayout
@@ -578,7 +453,6 @@
                 android:textColor="@color/black"
                 android:textSize="20dp"/>
 
-
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="178dp"
@@ -595,7 +469,6 @@
                 android:layout_column="0"
                 android:layout_columnSpan="2"/>
         </GridLayout>
-
 
     </RelativeLayout>
 

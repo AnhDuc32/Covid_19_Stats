@@ -32,7 +32,6 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:layout_marginEnd="6dp"
             android:baselineAligned="false"
             android:src="@drawable/covid1"
             android:padding="4dp"/>
@@ -72,14 +71,12 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
                         android:src="@drawable/fever" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
                         android:text="Fever/Chills"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -99,14 +96,12 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
                         android:src="@drawable/cough" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
                         android:text="Cough"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -135,7 +130,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
+
                         android:src="@drawable/diff_breathing" />
 
                     <TextView
@@ -162,14 +157,12 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
                         android:src="@drawable/sore_throat" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
                         android:text="Sore throat"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -197,7 +190,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginEnd="8dp"
+
                         android:src="@drawable/runny_nose"
                         android:layout_gravity="center"/>
 
@@ -224,7 +217,6 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
                         android:src="@drawable/loss_taste" />
 
                     <TextView
@@ -258,7 +250,6 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
                         android:src="@drawable/fatigue" />
 
                     <TextView
@@ -284,14 +275,14 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
+
                         android:src="@drawable/aches" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
+
                         android:textStyle="bold"
                         android:text="Body aches"
                         android:textSize="18sp" />
@@ -322,7 +313,6 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
                         android:src="@drawable/headaches" />
 
                     <TextView
@@ -347,14 +337,12 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
                         android:src="@drawable/nausea" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="8dp"
                         android:textStyle="bold"
                         android:text="Nausea"
                         android:textSize="18sp" />
@@ -376,7 +364,7 @@
         android:paddingTop="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:paddingBottom="60dp"
+        android:paddingBottom="70dp"
         android:layout_alignParentBottom="true">
 
         <ImageView
