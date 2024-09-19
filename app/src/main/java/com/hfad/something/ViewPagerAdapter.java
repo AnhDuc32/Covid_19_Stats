@@ -43,7 +43,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return "COUNTRY";
             case 2:
-                return "SIGNS & SYMPTOMS";
+                return "SYMPTOMS";
             default:
                 return null;
         }
