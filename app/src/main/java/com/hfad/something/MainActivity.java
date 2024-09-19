@@ -17,30 +17,34 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
-
-    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Create and add StatsFragment
-        StatsFragment statsFragment = new StatsFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.main, statsFragment).commit();
-        // Create Adapter
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        // Create and set ViewPager
-        ViewPager viewPager = findViewById(R.id.viewPager);
-        viewPager.setAdapter(adapter);
-        // Create and set TabLayout
+
+        ViewPager2 viewPager = findViewById(R.id.viewPager);
         TabLayout tabLayout = findViewById(R.id.tabLayout);
-        tabLayout.setupWithViewPager(viewPager);
-        // Set icon to TabLayout
-        tabLayout.getTabAt(0).setIcon(R.drawable.baseline_home_24);
-        tabLayout.getTabAt(1).setIcon(R.drawable.bar_chart);
-        tabLayout.getTabAt(2).setIcon(R.drawable.virus);
+
+        ViewPagerAdapter adapter = new ViewPagerAdapter(this);
+        viewPager.setAdapter(adapter);
+
+        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
+            switch (position) {
+                case 0:
+                    tab.setIcon(R.drawable.baseline_home_24);
+                    break;
+                case 1:
+                    tab.setIcon(R.drawable.bar_chart);
+                    break;
+                case 2:
+                    tab.setIcon(R.drawable.virus);
+                    break;
+            }
+        }).attach();
     }
 }
