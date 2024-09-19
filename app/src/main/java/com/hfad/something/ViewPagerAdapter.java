@@ -34,18 +34,4 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return 3; // Number of pages for a ViewPager
     }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-        switch (position) {
-            case 0:
-                return "GLOBAL";
-            case 1:
-                return "COUNTRY";
-            case 2:
-                return "SYMPTOMS";
-            default:
-                return null;
-        }
-    }
 }

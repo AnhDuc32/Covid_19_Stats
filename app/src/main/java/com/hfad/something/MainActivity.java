@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -18,7 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
 
@@ -48,7 +49,9 @@ public class MainActivity extends AppCompatActivity{
         // Create and set TabLayout
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
-
-        }
+        // Set icon to TabLayout
+        tabLayout.getTabAt(0).setIcon(R.drawable.baseline_home_24);
+        tabLayout.getTabAt(1).setIcon(R.drawable.bar_chart);
+        tabLayout.getTabAt(2).setIcon(R.drawable.virus);
     }
 }
