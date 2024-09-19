@@ -42,13 +42,13 @@ public class AffectedCountry extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                CountryModel selectedCountry = (CountryModel) myCustomAdapter.getItem(i);
+                int position = AffectedCountry.countryModelList.indexOf(selectedCountry);
                 Intent intent = new Intent(requireActivity(), CountryDetailActivity.class);
-                intent.putExtra("position", i);
+                intent.putExtra("position", position);
                 startActivity(intent);
             }
         });
-
-
 
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -81,7 +81,7 @@ public class AffectedCountry extends Fragment {
                 "500", // Today cases
                 "20,000", // Deaths
                 "10", // Today deaths
-                "950,000", // Recovered
+                "600,000", // Recovered
                 "30,000", // Active cases
                 "100" // Critical cases
         );
@@ -92,13 +92,13 @@ public class AffectedCountry extends Fragment {
         countryModel = new CountryModel(
                 R.drawable.united_states, // Flag
                 "USA", // Country name
-                "1,000,000", // Cases
-                "500", // Today cases
-                "20,000", // Deaths
-                "10", // Today deaths
-                "950,000", // Recovered
-                "30,000", // Active cases
-                "100" // Critical cases
+                "2,000,000", // Cases
+                "1,000", // Today cases
+                "50,000", // Deaths
+                "55", // Today deaths
+                "1,300,000", // Recovered
+                "75,000", // Active cases
+                "250" // Critical cases
         );
 
         // Add the object to the list
@@ -107,13 +107,13 @@ public class AffectedCountry extends Fragment {
         countryModel = new CountryModel(
                 R.drawable.united_kingdom, // Flag
                 "UK", // Country name
-                "1,000,000", // Cases
-                "500", // Today cases
-                "20,000", // Deaths
-                "10", // Today deaths
-                "950,000", // Recovered
-                "30,000", // Active cases
-                "100" // Critical cases
+                "1,400,000", // Cases
+                "700", // Today cases
+                "35,000", // Deaths
+                "40", // Today deaths
+                "850,000", // Recovered
+                "55,000", // Active cases
+                "170" // Critical cases
         );
 
         // Add the object to the list
