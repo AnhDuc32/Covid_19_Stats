@@ -347,7 +347,7 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:text="@string/recovered"
-                        android:textSize="15dp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -371,7 +371,7 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:text="@string/active"
-                        android:textSize="15dp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -395,7 +395,7 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:text="@string/deaths"
-                        android:textSize="15dp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 

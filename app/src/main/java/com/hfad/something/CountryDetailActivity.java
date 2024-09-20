@@ -67,6 +67,7 @@ public class CountryDetailActivity extends AppCompatActivity {
         float floatActive = Float.parseFloat(AffectedCountry.countryModelList.get(positionCountry).getActive().replace(",", ""));
 
         pieChart.addPieSlice(new PieModel("Recovered", floatRecovered, Color.parseColor("#00BFA6")));
+        pieChart.addPieSlice(new PieModel("Active", floatRecovered, Color.parseColor("#09B5FF")));
         pieChart.addPieSlice(new PieModel("Deaths", floatDeaths, Color.parseColor("#FF575F")));
 
         pieChart.startAnimation();
