@@ -3,9 +3,11 @@ package com.hfad.something;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -17,7 +19,7 @@ public class CountryDetailActivity extends AppCompatActivity {
     TextView cases, todayCases, deaths, todayDeaths, recovered, activeCases, criticalCases;
     TextView toolBarTitle;
     PieChart pieChart;
-    Spinner spinner;
+    Toolbar toolBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,15 @@ public class CountryDetailActivity extends AppCompatActivity {
         activeCases = findViewById(R.id.activeCases);
         criticalCases = findViewById(R.id.criticalCases);
 
+        // Set up ToolBar
+        toolBar = findViewById(R.id.toolBar);
+        setSupportActionBar(toolBar);
+        getSupportActionBar();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_arrow_back_24);
+
         // Set data
         toolBarTitle.setText(AffectedCountry.countryModelList.get(positionCountry).getCountry() + " Statistics");
         cases.setText(AffectedCountry.countryModelList.get(positionCountry).getCases());
@@ -55,13 +66,20 @@ public class CountryDetailActivity extends AppCompatActivity {
         float floatDeaths = Float.parseFloat(AffectedCountry.countryModelList.get(positionCountry).getDeaths().replace(",", ""));
         float floatActive = Float.parseFloat(AffectedCountry.countryModelList.get(positionCountry).getActive().replace(",", ""));
 
-        pieChart.addPieSlice(new PieModel("Total Cases", floatCases, Color.parseColor("#FFFF00")));
-        pieChart.addPieSlice(new PieModel("Recovered", floatRecovered, Color.parseColor("#0000FF")));
-        pieChart.addPieSlice(new PieModel("Deaths", floatDeaths, Color.parseColor("#FF0000")));
-        pieChart.addPieSlice(new PieModel("Active", floatActive, Color.parseColor("#00FF00")));
+        pieChart.addPieSlice(new PieModel("Total Cases", floatCases, Color.parseColor("#FFC542")));
+        pieChart.addPieSlice(new PieModel("Recovered", floatRecovered, Color.parseColor("#09B5FF")));
+        pieChart.addPieSlice(new PieModel("Deaths", floatDeaths, Color.parseColor("#FF575F")));
+        pieChart.addPieSlice(new PieModel("Active", floatActive, Color.parseColor("#00BFA6")));
 
         pieChart.startAnimation();
+    }
 
-        // Set up Spinner
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
