@@ -17,6 +17,10 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.ValueFormatter;
+
+import org.eazegraph.lib.charts.PieChart;
+import org.eazegraph.lib.models.PieModel;
 
 import java.util.ArrayList;
 
@@ -24,6 +28,7 @@ public class StatsFragment extends Fragment {
 
     private LineChart lineChart;
     private Spinner spinner;
+    private PieChart pieChart;
 
     public StatsFragment() {
         // Required empty public constructor
@@ -34,11 +39,16 @@ public class StatsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_stats, container, false);
+        pieChart = view.findViewById(R.id.piechart);
         lineChart = view.findViewById(R.id.lineChart);
         spinner = view.findViewById(R.id.spinner);
         setupSpinner();
         setupChart("total_cases");
         return view;
+    }
+
+    private void setupPieChart(){
+        pieChart.addPieSlice(new PieModel());
     }
 
     private void setupSpinner() {
@@ -69,6 +79,8 @@ public class StatsFragment extends Fragment {
                 entries.add(new Entry(2, 1500));
                 entries.add(new Entry(3, 3000));
                 entries.add(new Entry(4, 2500));
+                entries.add(new Entry(5, 4000));
+                entries.add(new Entry(6, 3500));
                 break;
             case "recovered":
                 entries.add(new Entry(0, 800));
@@ -76,6 +88,8 @@ public class StatsFragment extends Fragment {
                 entries.add(new Entry(2, 1200));
                 entries.add(new Entry(3, 2500));
                 entries.add(new Entry(4, 2000));
+                entries.add(new Entry(5, 2800));
+                entries.add(new Entry(6, 1500));
                 break;
             case "deaths":
                 entries.add(new Entry(0, 50));
@@ -83,6 +97,8 @@ public class StatsFragment extends Fragment {
                 entries.add(new Entry(2, 75));
                 entries.add(new Entry(3, 150));
                 entries.add(new Entry(4, 120));
+                entries.add(new Entry(5, 200));
+                entries.add(new Entry(6, 250));
                 break;
             case "active_cases":
                 entries.add(new Entry(0, 150));
@@ -90,6 +106,8 @@ public class StatsFragment extends Fragment {
                 entries.add(new Entry(2, 200));
                 entries.add(new Entry(3, 350));
                 entries.add(new Entry(4, 250));
+                entries.add(new Entry(5, 400));
+                entries.add(new Entry(6, 180));
                 break;
         }
 
@@ -109,6 +127,16 @@ public class StatsFragment extends Fragment {
         lineChart.getAxisRight().setDrawGridLines(false);
         lineChart.getXAxis().setDrawGridLines(false);
         lineChart.getAxisRight().setEnabled(false);
+
+        final String[] daysOfWeek = new String[]{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday","Sunday"};
+        ValueFormatter xAxisFormatter = new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value) {
+                return daysOfWeek[(int) value % daysOfWeek.length];
+            }
+        };
+        lineChart.getXAxis().setValueFormatter(xAxisFormatter);
+        lineChart.getXAxis().setGranularity(1f);
     }
 }
 
