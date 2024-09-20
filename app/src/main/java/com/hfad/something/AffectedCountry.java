@@ -79,11 +79,11 @@ public class AffectedCountry extends Fragment {
                 "Vietnam", // Country name
                 "1,000,000", // Cases
                 "500", // Today cases
-                "20,000", // Deaths
+                "200,000", // Deaths
                 "10", // Today deaths
                 "600,000", // Recovered
                 "30,000", // Active cases
-                "100" // Critical cases
+                "10,000" // Critical cases
         );
 
         // Add the object to the list
@@ -94,11 +94,11 @@ public class AffectedCountry extends Fragment {
                 "USA", // Country name
                 "2,000,000", // Cases
                 "1,000", // Today cases
-                "50,000", // Deaths
+                "500,000", // Deaths
                 "55", // Today deaths
                 "1,300,000", // Recovered
                 "75,000", // Active cases
-                "250" // Critical cases
+                "25,000" // Critical cases
         );
 
         // Add the object to the list
@@ -109,11 +109,11 @@ public class AffectedCountry extends Fragment {
                 "UK", // Country name
                 "1,400,000", // Cases
                 "700", // Today cases
-                "35,000", // Deaths
+                "350,000", // Deaths
                 "40", // Today deaths
                 "850,000", // Recovered
                 "55,000", // Active cases
-                "170" // Critical cases
+                "17,000" // Critical cases
         );
 
         // Add the object to the list
