@@ -10,24 +10,38 @@
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:id="@+id/head"
+        android:padding="8dp"
         android:background="@drawable/relative_drawable2">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/relative_drawable2"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:gravity="center">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"
+                android:padding="6dp"
                 android:text="@string/stats"
+                android:textAllCaps="true"
                 android:textColor="@color/white"
-                android:textSize="24dp"
+                android:textSize="25dp"
                 android:textStyle="bold"/>
 
-            <GridLayout
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:baselineAligned="false"
+                android:src="@drawable/global"
+                android:padding="4dp"/>
+
+            <!--GridLayout
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -57,7 +71,7 @@
                     android:textStyle="bold"
                     android:textSize="20dp" />
 
-            </GridLayout>
+            </GridLayout-->
 
         </LinearLayout>
 
@@ -308,7 +322,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
-                    android:text="@string/total_stats"
+                    android:text="@string/overview"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -317,7 +331,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal">
 
                     <View
@@ -325,14 +339,14 @@
                         android:layout_height="10dp"
                         android:layout_gravity="center"
                         android:background="@drawable/view_drawable"
-                        android:backgroundTint="@color/yellow" />
+                        android:backgroundTint="@color/green" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
-                        android:text="@string/total_case"
+                        android:text="@string/recovered"
                         android:textSize="15dp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -357,30 +371,6 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:text="@string/active"
-                        android:textSize="15dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
-
-                    <View
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/view_drawable"
-                        android:backgroundTint="@color/green" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/recovered"
                         android:textSize="15dp"
                         android:textStyle="bold" />
                 </LinearLayout>

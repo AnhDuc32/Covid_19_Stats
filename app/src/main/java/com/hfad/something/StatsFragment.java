@@ -42,13 +42,19 @@ public class StatsFragment extends Fragment {
         pieChart = view.findViewById(R.id.piechart);
         lineChart = view.findViewById(R.id.lineChart);
         spinner = view.findViewById(R.id.spinner);
+        setupPieChart();
         setupSpinner();
         setupChart("total_cases");
         return view;
     }
 
     private void setupPieChart(){
-        pieChart.addPieSlice(new PieModel());
+        pieChart.addPieSlice(new PieModel("Recovered",50,Color.parseColor("#00BFA6")));
+        pieChart.addPieSlice(new PieModel("Active",30,Color.parseColor("#09B5FF")));
+        pieChart.addPieSlice(new PieModel("Deaths",20,Color.parseColor("#FF575F")));
+        pieChart.setUsePieRotation(true);
+        pieChart.setDrawValueInPie(true);
+        pieChart.startAnimation();
     }
 
     private void setupSpinner() {
