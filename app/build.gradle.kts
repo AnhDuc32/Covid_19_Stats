@@ -25,6 +25,10 @@ android {
             )
         }
     }
+    buildFeatures{
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -40,6 +44,7 @@ dependencies {
     implementation("com.nineoldandroids:library:2.4.0")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
     implementation("com.diogobernardino:williamchart:3.10.1")
+    implementation("com.airbnb.android:lottie:6.5.2")
 
     implementation(libs.appcompat)
     implementation(libs.material)
