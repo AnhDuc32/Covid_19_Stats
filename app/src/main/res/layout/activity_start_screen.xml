@@ -3,126 +3,144 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/relative_background">
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/relative_drawable2"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/splashImage"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/covid_19" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="50dp"
+            android:textColor="@color/black"
+            android:text="Login"
+            android:layout_marginTop="20dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="70dp"
-                android:text="@string/app_name"
-                android:textColor="@color/white"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="35dp"
+            android:paddingTop="20dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/black"
+            android:text="E-mail"
+            android:layout_marginTop="10dp"/>
 
-            <ImageView
-                android:id="@+id/splashImage"
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="100dp"
-                android:src="@drawable/covid_19" />
+        <EditText
+            android:layout_width="450dp"
+            android:layout_height="80dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="E-mail / Username"
+            android:drawableStart="@drawable/email_icon"
+            android:drawablePadding="10dp"
+            android:paddingStart="10dp"
+            android:drawableTint="@color/black"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="100dp"
-                android:text="@string/protect_yourself"
-                android:textColor="@color/white"
-                android:textSize="25sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="35dp"
+            android:paddingTop="20dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/black"
+            android:text="Password"
+            android:layout_marginTop="10dp"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="50dp"
-                android:orientation="horizontal">
+        <EditText
+            android:layout_width="450dp"
+            android:layout_height="80dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="Password"
+            android:drawableStart="@drawable/password_icon"
+            android:drawablePadding="10dp"
+            android:drawableEnd="@drawable/eyes"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:drawableTint="@color/black"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"/>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:orientation="vertical"
-                    tools:ignore="UseCompoundDrawables">
+        <Button
+            android:textSize="20dp"
+            android:layout_width="450dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/relative_background"
+            android:text="Login"
+            android:gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp" />
 
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:background="@drawable/circular_background"
-                        android:src="@drawable/wear_mask" />
+        <Button
+            android:layout_width="450dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/white"
+            android:hint="Forgot password"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:drawableTint="@color/black"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/wear_mask"
-                        android:textColor="@color/white"
-                        android:textSize="15sp" />
-                </LinearLayout>
+            android:hint="Didn't have account?" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textColorHint="#4287f5"
+            android:hint=" Sign up" />
+    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:orientation="vertical"
-                    tools:ignore="UseCompoundDrawables">
 
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:background="@drawable/circular_background"
-                        android:src="@drawable/hand_wash_4" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/wash_hand"
-                        android:textColor="@color/white"
-                        android:textSize="15sp" />
-                </LinearLayout>
+    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:orientation="vertical"
-                    tools:ignore="UseCompoundDrawables">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:background="@drawable/circular_background"
-                        android:src="@drawable/keep_distance" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/keep_distance"
-                        android:textColor="@color/white"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/startButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:backgroundTint="#2341a6"
-                android:text="@string/startBtn"
-                android:textSize="20sp" />
-        </LinearLayout>
-    </ScrollView>
 </LinearLayout>
