@@ -14,4 +14,12 @@
     <color name="card_background">#D3D1D1</color>
     <color name="country_background">#EAE9E9</color>
     <color name="relative_background">#263238</color>
+
+    <color name="primary">#1B023B</color>
+    <color name="secondary">#FF03DAC5</color>
+    
+    <color name="night_mode">#6124B1</color>
+    <color name="notification">#13B2C3</color>
+    <color name="security">#095F69</color>
+
 </resources>
