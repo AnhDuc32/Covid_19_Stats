@@ -47,4 +47,21 @@ public class MainActivity extends AppCompatActivity {
             }
         }).attach();
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.nav_settings) {
+            // Open the SettingsFragment
+            SettingsFragment settingsFragment = new SettingsFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, settingsFragment)
+                    .addToBackStack(null)
+                    .commit();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }
