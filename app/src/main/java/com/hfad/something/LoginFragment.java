@@ -11,21 +11,11 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-import com.hfad.something.databinding.FragmentLoginBinding;
-
-
 public class LoginFragment extends Fragment {
-
-    private FragmentLoginBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentLoginBinding.inflate(inflater, container, false);
-        View view = binding.getRoot();
-
-
-
-        return view;
+        return inflater.inflate(R.layout.fragment_sign_symptom, container, false);
     }
 }

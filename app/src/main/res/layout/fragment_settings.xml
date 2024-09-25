@@ -149,7 +149,8 @@
         <!-- Security -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
             <ImageView
 
@@ -164,7 +165,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Security & Privacy"
+                android:text="Security &amp; Privacy"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/securityIcon"/>
@@ -178,38 +179,6 @@
 
         </RelativeLayout>
 
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-
-                android:id="@+id/nightModeIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_back_night_mode"
-                android:src="@drawable/night_mode" />
-            <TextView
-                android:layout_marginStart="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="Night Mode"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:layout_toEndOf="@+id/nightModeIcon" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:switchMinWidth="50dp"
-                android:theme="@style/nightModeSwitch"/>
-
-        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>
