@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="280dp"
         android:background="@drawable/relative_drawable2"
         android:orientation="vertical">
 
@@ -18,8 +18,8 @@
             android:layout_width="170dp"
             android:layout_height="170dp"
             android:layout_gravity="center"
-            android:src="@drawable/covid_19"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="50dp"
+            android:src="@drawable/covid_19" />
 
     </LinearLayout>
 
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:textSize="40dp"
+            android:textSize="50dp"
             android:textColor="@color/black"
             android:text="Login"
             android:layout_marginTop="20dp"/>
@@ -56,7 +56,7 @@
             android:layout_marginTop="10dp"/>
 
         <EditText
-            android:layout_width="350dp"
+            android:layout_width="450dp"
             android:layout_height="80dp"
             android:background="@drawable/edit_text_background"
             android:hint="E-mail / Username"
@@ -82,7 +82,7 @@
             android:layout_marginTop="10dp"/>
 
         <EditText
-            android:layout_width="350dp"
+            android:layout_width="450dp"
             android:layout_height="80dp"
             android:background="@drawable/edit_text_background"
             android:hint="Password"
@@ -98,18 +98,17 @@
 
         <Button
             android:textSize="20dp"
-            android:layout_width="350dp"
+            android:layout_width="450dp"
             android:layout_height="80dp"
             android:backgroundTint="@color/relative_background"
             android:text="Login"
             android:gravity="center"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:id="@+id/startButton"/>
+            android:layout_marginTop="20dp" />
 
         <Button
-            android:layout_width="350dp"
+            android:layout_width="450dp"
             android:layout_height="80dp"
             android:backgroundTint="@color/white"
             android:hint="Forgot password"
@@ -119,26 +118,26 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
 
-            android:hint="Didn't have account?" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:textColorHint="#4287f5"
-            android:hint=" Sign up" />
-    </LinearLayout>
+                android:hint="Didn't have account?" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textColorHint="#4287f5"
+                android:hint=" Sign up" />
+        </LinearLayout>
 
 
 

@@ -108,8 +108,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:switchMinWidth="50dp"
-                android:theme="@style/nightModeSwitch"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:theme="@style/nightModeSwitch"/>
 
         </RelativeLayout>
 
@@ -143,15 +142,15 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:switchMinWidth="50dp"
-                android:theme="@style/notificationsSwitch"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:theme="@style/notificationsSwitch"/>
 
         </RelativeLayout>
 
         <!-- Security -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
             <ImageView
 
@@ -166,7 +165,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Security and Privacy"
+                android:text="Security &amp; Privacy"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/securityIcon"/>
@@ -180,206 +179,11 @@
 
         </RelativeLayout>
 
-
-
-        <!-- TextSize -->
-
-        <RelativeLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-
-                android:id="@+id/textSizeIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_back_night_mode"
-                android:src="@drawable/text_size_icon" />
-            <TextView
-                android:layout_marginStart="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="Text Size"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:layout_toEndOf="@+id/textSizeIcon" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:switchMinWidth="50dp"
-                android:theme="@style/nightModeSwitch"
-                tools:ignore="TouchTargetSizeCheck" />
-
-        </RelativeLayout>
-
-
-        <!-- Language -->
-
-        <RelativeLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-
-                android:id="@+id/languageIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_back_notifications"
-                android:src="@drawable/language_icon" />
-            <TextView
-                android:layout_marginStart="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="Language"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:layout_toEndOf="@+id/languageIcon" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:switchMinWidth="50dp"
-                android:theme="@style/nightModeSwitch"
-                tools:ignore="TouchTargetSizeCheck" />
-
-        </RelativeLayout>
     </LinearLayout>
-    <LinearLayout
-        android:background="@drawable/round_back_white10_20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="40dp"
-        android:orientation="vertical"
-        android:padding="15dp">
 
-        <!-- Send us a message -->
-        <RelativeLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-
-                android:id="@+id/messageIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_back_notifications"
-                android:src="@drawable/message_icon" />
-            <TextView
-                android:layout_marginStart="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="Send us a message"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:layout_toEndOf="@+id/messageIcon" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:switchMinWidth="50dp"
-                android:theme="@style/nightModeSwitch"
-                tools:ignore="TouchTargetSizeCheck" />
-
-        </RelativeLayout>
-
-        <!-- About us -->
-        <RelativeLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-
-                android:id="@+id/aboutUsIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_back_security"
-                android:src="@drawable/about_us_icon" />
-            <TextView
-                android:layout_marginStart="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="About Us"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:layout_toEndOf="@+id/aboutUsIcon" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:switchMinWidth="50dp"
-                android:theme="@style/nightModeSwitch"
-                tools:ignore="TouchTargetSizeCheck" />
-
-        </RelativeLayout>
-        <LinearLayout
-            android:background="@drawable/round_back_white10_20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="40dp"
-            android:orientation="vertical"
-            android:padding="15dp">
-
-            <!-- Log out -->
-            <RelativeLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-
-                    android:id="@+id/logoutIcon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:padding="12dp"
-                    android:background="@drawable/round_back_security"
-                    android:src="@drawable/logout_icon" />
-                <TextView
-                    android:layout_marginStart="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Log Out"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:layout_toEndOf="@+id/logoutIcon" />
-
-                <androidx.appcompat.widget.SwitchCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:switchMinWidth="50dp"
-                    android:theme="@style/nightModeSwitch"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
-        </LinearLayout>
 </LinearLayout>
+
+
+
+
+
