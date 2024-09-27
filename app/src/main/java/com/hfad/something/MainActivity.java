@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
                 case 2:
                     tab.setIcon(R.drawable.virus);
                     break;
+                case 3:
+                    tab.setIcon(R.drawable.haphoi);
+                    break;
             }
         }).attach();
     }
