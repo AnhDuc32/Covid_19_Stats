@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/primary"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -17,9 +17,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="SETTINGS"
             android:layout_centerInParent="true"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="18sp"/>
 
@@ -47,14 +47,14 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="User Name"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="22dp"
         android:textStyle="bold"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="phone_number"
-        android:textColor="#CCFFFFFF"
+        android:textColor="@color/black"
         android:textSize="12sp"
         android:layout_gravity="center"/>
     <androidx.appcompat.widget.AppCompatButton
@@ -64,9 +64,9 @@
         android:paddingStart="30dp"
         android:layout_gravity="center"
         android:background="@drawable/round_back_secondary_100"
-        android:text="edit profile"
+        android:text="Edit Profile"
         android:textAllCaps="false"
-        android:textColor="@color/primary"
+        android:textColor="@color/white"
         android:paddingEnd="30dp"/>
     <LinearLayout
         android:background="@drawable/round_back_white10_20"
@@ -86,18 +86,18 @@
             <ImageView
 
                 android:id="@+id/nightModeIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_back_night_mode"
-                android:src="@drawable/night_mode" />
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="0dp"
+
+                android:src="@drawable/night_mode1" />
             <TextView
                 android:layout_marginStart="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="Night Mode"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/nightModeIcon" />
 
@@ -114,25 +114,24 @@
 
         <!-- Notifications -->
         <RelativeLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginVertical="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
 
                 android:id="@+id/notificationIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_back_notifications"
-                android:src="@drawable/notifications_icon"/>
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:src="@drawable/notification"/>
             <TextView
                 android:layout_marginStart="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="Notifications"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/notificationIcon" />
 
@@ -155,18 +154,17 @@
             <ImageView
 
                 android:id="@+id/securityIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_back_security"
-                android:src="@drawable/security_icon" />
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:src="@drawable/shield" />
             <TextView
                 android:layout_marginStart="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="Security and Privacy"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/securityIcon"/>
 
@@ -191,29 +189,26 @@
             <ImageView
 
                 android:id="@+id/textSizeIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_back_night_mode"
-                android:src="@drawable/text_size_icon" />
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:src="@drawable/text_size" />
             <TextView
                 android:layout_marginStart="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="Text Size"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/textSizeIcon" />
 
-            <androidx.appcompat.widget.SwitchCompat
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/right_arrow"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:switchMinWidth="50dp"
-                android:theme="@style/nightModeSwitch"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:layout_centerVertical="true"/>
 
         </RelativeLayout>
 
@@ -228,29 +223,26 @@
             <ImageView
 
                 android:id="@+id/languageIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_back_notifications"
-                android:src="@drawable/language_icon" />
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:src="@drawable/language" />
             <TextView
                 android:layout_marginStart="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="Language"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/languageIcon" />
 
-            <androidx.appcompat.widget.SwitchCompat
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/right_arrow"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:switchMinWidth="50dp"
-                android:theme="@style/nightModeSwitch"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:layout_centerVertical="true"/>
 
         </RelativeLayout>
     </LinearLayout>
@@ -273,29 +265,26 @@
             <ImageView
 
                 android:id="@+id/messageIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_back_notifications"
-                android:src="@drawable/message_icon" />
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:src="@drawable/chat" />
             <TextView
                 android:layout_marginStart="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="Send us a message"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/messageIcon" />
 
-            <androidx.appcompat.widget.SwitchCompat
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/right_arrow"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:switchMinWidth="50dp"
-                android:theme="@style/nightModeSwitch"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:layout_centerVertical="true"/>
 
         </RelativeLayout>
 
@@ -308,11 +297,9 @@
             <ImageView
 
                 android:id="@+id/aboutUsIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="12dp"
-                android:background="@drawable/round_back_security"
-                android:src="@drawable/about_us_icon" />
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/information" />
             <TextView
                 android:layout_marginStart="20dp"
                 android:layout_width="wrap_content"
@@ -323,40 +310,36 @@
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/aboutUsIcon" />
 
-            <androidx.appcompat.widget.SwitchCompat
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/right_arrow"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:switchMinWidth="50dp"
-                android:theme="@style/nightModeSwitch"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:layout_centerVertical="true"/>
 
         </RelativeLayout>
         <LinearLayout
             android:background="@drawable/round_back_white10_20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:orientation="vertical"
-            android:padding="15dp">
+            android:padding="5dp">
 
             <!-- Log out -->
             <RelativeLayout
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
 
                 <ImageView
 
                     android:id="@+id/logoutIcon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:padding="12dp"
-                    android:background="@drawable/round_back_security"
-                    android:src="@drawable/logout_icon" />
+                    android:padding="7dp"
+
+                    android:src="@drawable/exit" />
                 <TextView
                     android:layout_marginStart="20dp"
                     android:layout_width="wrap_content"
@@ -367,14 +350,6 @@
                     android:textStyle="bold"
                     android:layout_toEndOf="@+id/logoutIcon" />
 
-                <androidx.appcompat.widget.SwitchCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:switchMinWidth="50dp"
-                    android:theme="@style/nightModeSwitch"
-                    tools:ignore="TouchTargetSizeCheck" />
 
             </RelativeLayout>
 
