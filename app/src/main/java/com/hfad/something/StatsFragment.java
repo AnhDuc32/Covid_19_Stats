@@ -1,5 +1,6 @@
 package com.hfad.something;
 
+import android.bluetooth.le.AdvertiseData;
 import android.graphics.Color;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import nl.bryanderidder.themedtogglebuttongroup.ThemedButton;
+import nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup;
+
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -23,12 +29,14 @@ import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
 
 import java.util.ArrayList;
+import java.util.Currency;
 
 public class StatsFragment extends Fragment {
 
     private LineChart lineChart;
     private Spinner spinner;
     private PieChart pieChart;
+    private ThemedToggleButtonGroup toggleButton;
 
     public StatsFragment() {
         // Required empty public constructor
@@ -42,10 +50,79 @@ public class StatsFragment extends Fragment {
         pieChart = view.findViewById(R.id.piechart);
         lineChart = view.findViewById(R.id.lineChart);
         spinner = view.findViewById(R.id.spinner);
+        toggleButton = view.findViewById(R.id.toggleButton);
+
+        setupToggleButton();
         setupPieChart();
         setupSpinner();
         setupChart("total_cases");
         return view;
+    }
+
+    private void setupToggleButton() {
+        toggleButton.selectButton(R.id.btnGlobal);
+        toggleButton.setOnSelectListener(new Function1<ThemedButton, Unit>() {
+            @Override
+            public Unit invoke(ThemedButton button) {
+                int buttonId = button.getId();
+                if (buttonId == R.id.btnGlobal) {
+                    updateDataForGlobal();
+                } else if (buttonId == R.id.btnVietnam) {
+                    updateDataForVietnam();
+                }
+                return Unit.INSTANCE;
+            }
+        });
+    }
+
+    private void updateDataForGlobal(){
+        pieChart.clearChart();
+        pieChart.addPieSlice(new PieModel("Recovered",50,Color.parseColor("#00BFA6")));
+        pieChart.addPieSlice(new PieModel("Active",30,Color.parseColor("#09B5FF")));
+        pieChart.addPieSlice(new PieModel("Deaths",20,Color.parseColor("#FF575F")));
+        pieChart.startAnimation();
+
+        String selectedStatistic = spinner.getSelectedItem().toString().toLowerCase().replace(" ","_");
+        setupChart(selectedStatistic);
+    }
+
+    private void updateDataForVietnam() {
+        pieChart.clearChart();
+        pieChart.addPieSlice(new PieModel("Recovered",100,Color.parseColor("#00BFA6")));
+        pieChart.addPieSlice(new PieModel("Active",60,Color.parseColor("#09B5FF")));
+        pieChart.addPieSlice(new PieModel("Deaths",40,Color.parseColor("#FF575F")));
+        pieChart.startAnimation();
+
+        String selectedStatistic = spinner.getSelectedItem().toString().toLowerCase().replace(" ","_");
+        setupChart(selectedStatistic);
+    }
+
+    private void setupChartForVietnam(String statistics){
+        ArrayList<Entry> entries = new ArrayList<>();
+        switch (statistics){
+            case "total_cases":
+                entries.add(new Entry(0, 500));
+                entries.add(new Entry(1, 1000));
+                entries.add(new Entry(2, 750));
+                entries.add(new Entry(3, 1500));
+                entries.add(new Entry(4, 1250));
+                entries.add(new Entry(5, 2000));
+                entries.add(new Entry(6, 1750));
+                break;
+        }
+        updateLineChart(entries);
+    }
+
+    private void updateLineChart(ArrayList<Entry> entries){
+        LineDataSet dataSet = new LineDataSet(entries,"Statistics");
+        dataSet.setColor(Color.BLUE);
+        dataSet.setValueTextColor(Color.BLACK);
+        dataSet.setDrawCircles(true);
+        dataSet.setDrawValues(true);
+
+        LineData lineData = new LineData(dataSet);
+        lineChart.setData(lineData);
+        lineChart.invalidate();
     }
 
     private void setupPieChart(){
@@ -134,7 +211,7 @@ public class StatsFragment extends Fragment {
         lineChart.getXAxis().setDrawGridLines(false);
         lineChart.getAxisRight().setEnabled(false);
 
-        final String[] daysOfWeek = new String[]{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday","Sunday"};
+        final String[] daysOfWeek = new String[]{"Mon", "Tues", "Wed", "Thur", "Fri", "Sat", "Sun"};
         ValueFormatter xAxisFormatter = new ValueFormatter() {
             @Override
             public String getFormattedValue(float value) {
