@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
                 case 3:
                     tab.setIcon(R.drawable.haphoi);
                     break;
+                case 4:
+                    tab.setIcon(R.drawable.gps_svgrepo_com);
             }
         }).attach();
     }
