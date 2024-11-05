@@ -33,8 +33,6 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
                 return new SignSymptomFragment();
             case 3:
                 return new Help();
-            case 4:
-                return new GPSFragment();
             default:
                 return new StatsFragment();
         }
@@ -42,6 +40,6 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 4;
     }
 }

@@ -13,9 +13,21 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,18 +38,16 @@ public class AffectedCountry extends Fragment {
     CountryModel countryModel;
     MyCustomAdapter myCustomAdapter;
     ListView listView;
-    EditText edtSearch;
+    EditText editSearch;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.activity_affected_country, container, false);
 
-        edtSearch = view.findViewById(R.id.edtSearch);
+        editSearch = view.findViewById(R.id.editSearch);
         listView = view.findViewById(R.id.listView);
 
-        // Manually add data for one country
-        addCountryData();
+        fetchCountryData();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -50,7 +60,7 @@ public class AffectedCountry extends Fragment {
             }
         });
 
-        edtSearch.addTextChangedListener(new TextWatcher() {
+        editSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -71,56 +81,49 @@ public class AffectedCountry extends Fragment {
         return view;
     }
 
-    private void addCountryData() {
+    private void fetchCountryData() {
         countryModelList.clear();
+        String url = "https://disease.sh/v3/covid-19/countries";
 
-        countryModel = new CountryModel(
-                R.drawable.vietnam, // Flag
-                "Vietnam", // Country name
-                "1,000,000", // Cases
-                "500", // Today cases
-                "200,000", // Deaths
-                "10", // Today deaths
-                "600,000", // Recovered
-                "30,000", // Active cases
-                "10,000" // Critical cases
-        );
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(response);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                String countryName = jsonObject.getString("country");
+                                String cases = jsonObject.getString("cases");
+                                String todayCases = jsonObject.getString("todayCases");
+                                String deaths = jsonObject.getString("deaths");
+                                String todayDeaths = jsonObject.getString("todayDeaths");
+                                String recovered = jsonObject.getString("recovered");
+                                String active = jsonObject.getString("active");
+                                String critical = jsonObject.getString("critical");
+                                JSONObject object = jsonObject.getJSONObject("countryInfo");
+                                String flag = object.getString("flag");
 
-        // Add the object to the list
-        countryModelList.add(countryModel);
+                                countryModel = new CountryModel(flag, countryName, cases, todayCases, deaths, todayDeaths, recovered, active, critical);
+                                countryModelList.add(countryModel);
+                            }
 
-        countryModel = new CountryModel(
-                R.drawable.united_states, // Flag
-                "USA", // Country name
-                "2,000,000", // Cases
-                "1,000", // Today cases
-                "500,000", // Deaths
-                "55", // Today deaths
-                "1,300,000", // Recovered
-                "75,000", // Active cases
-                "25,000" // Critical cases
-        );
+                            myCustomAdapter = new MyCustomAdapter(getActivity(), countryModelList);
+                            listView.setAdapter(myCustomAdapter);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getActivity(), "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-        // Add the object to the list
-        countryModelList.add(countryModel);
-
-        countryModel = new CountryModel(
-                R.drawable.united_kingdom, // Flag
-                "UK", // Country name
-                "1,400,000", // Cases
-                "700", // Today cases
-                "350,000", // Deaths
-                "40", // Today deaths
-                "850,000", // Recovered
-                "55,000", // Active cases
-                "17,000" // Critical cases
-        );
-
-        // Add the object to the list
-        countryModelList.add(countryModel);
-
-        // Set the adapter to the ListView
-        myCustomAdapter = new MyCustomAdapter(getActivity(), countryModelList);
-        listView.setAdapter(myCustomAdapter);
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
     }
+
 }
