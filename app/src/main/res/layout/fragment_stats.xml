@@ -8,14 +8,15 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="170dp"
         android:id="@+id/head"
         android:padding="8dp"
         android:background="@drawable/relative_drawable2">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/content"
             android:layout_marginBottom="6dp"
             android:background="@drawable/relative_drawable2"
             android:orientation="horizontal"
@@ -41,39 +42,59 @@
                 android:src="@drawable/global"
                 android:padding="4dp"/>
 
-            <!--GridLayout
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:columnCount="2"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
-
-                <Button
-                    android:id="@+id/button1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    android:layout_columnWeight="1"
-                    android:text="Global"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:text="Vietnam"
-                    android:textStyle="bold"
-                    android:textSize="20dp" />
-
-            </GridLayout-->
-
         </LinearLayout>
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+            android:id="@+id/toggleButton"
+            android:layout_below="@id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_background_toggle_group"
+            app:toggle_horizontalSpacing="0dp"
+            app:toggle_selectableAmount="1"
+            app:toggle_requiredAmount="1"
+            android:layout_marginTop="10dp"
+            app:toggle_selectAnimation="fade">
+
+            <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+                android:id="@+id/btnVietnam"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                app:toggle_text="@string/toggle_vietnam"
+                app:toggle_textSize="20dp"
+                app:toggle_textAlignment="center"
+                app:toggle_fontFamily="Roboto"
+                app:toggle_backgroundColor="#4A5B64"
+                app:toggle_selectedBackgroundColor="@color/white"
+                app:toggle_textColor="@color/white"
+                app:toggle_selectedTextColor="@color/black"
+                app:toggle_btnCornerRadius="20dp"
+                app:toggle_borderWidth="1dp"
+                app:backgroundTint="@null"
+                app:strokeWidth="0dp"
+                app:cornerRadius="20dp"/>
+
+            <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+                android:id="@+id/btnGlobal"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                app:toggle_text="@string/toggle_global"
+                app:toggle_textSize="20dp"
+                android:paddingLeft="10dp"
+                app:toggle_paddingRight="10dp"
+                app:toggle_textAlignment="center"
+                app:toggle_fontFamily="Roboto"
+                app:toggle_backgroundColor="#4A5B64"
+                app:toggle_selectedBackgroundColor="@color/white"
+                app:toggle_textColor="@color/white"
+                app:toggle_selectedTextColor="@color/black"
+                app:toggle_btnCornerRadius="20dp"
+                app:toggle_borderWidth="1dp"
+                app:backgroundTint="@null"
+                app:strokeWidth="0dp"
+                app:cornerRadius="20dp"/>
+        </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
 
     </RelativeLayout>
 
@@ -446,7 +467,7 @@
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="178dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_row="0"
                 android:layout_column="1"
                 android:paddingBottom="16dp"/>

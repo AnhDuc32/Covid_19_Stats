@@ -25,6 +25,8 @@
     <string name="cases">Total Cases</string>
     <string name="increment_number">+123456</string>
     <string name="number">0123456789</string>
+    <string name="toggle_vietnam">Viet Nam</string>
+    <string name="toggle_global">Global </string>
 
     // AffectedCountry
     <string name="search">Search Country</string>

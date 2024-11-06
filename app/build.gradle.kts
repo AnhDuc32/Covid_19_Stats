@@ -12,7 +12,6 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -26,22 +25,31 @@ android {
         }
     }
 
+    buildFeatures{
+        viewBinding=true;
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+
     }
 }
 
 dependencies {
-
+    // Retrofit and HTTP client
     implementation(libs.retrofit)
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.0")
+
+    // theme for button group
+    implementation ("nl.bryanderidder:themed-toggle-button-group:1.4.1")
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib:1.6.0")
     implementation("com.hbb20:ccp:2.7.0")
     implementation("com.github.blackfizz:eazegraph:1.2.2@aar")
     implementation("com.nineoldandroids:library:2.4.0")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
     implementation("com.diogobernardino:williamchart:3.10.1")
-
 
     implementation(libs.appcompat)
     implementation(libs.material)
