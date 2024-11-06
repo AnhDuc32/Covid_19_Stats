@@ -62,6 +62,7 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.activity:activity:1.9.2")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation(libs.ui.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -70,4 +71,5 @@ dependencies {
     annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
 
     implementation("com.android.volley:volley:1.2.1")
+
 }
