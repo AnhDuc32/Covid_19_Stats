@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationRequest;
+
 
 public class GPSFragment extends Fragment {
 
@@ -20,6 +23,14 @@ public class GPSFragment extends Fragment {
     TextView tv_lat, tv_lon, tv_altitude, tv_accuracy, tv_speed, tv_sensor, tv_updates, tv_address;
 
     Switch sw_locationsupdates, sw_gps;
+
+    //variable to remember if we are tracking or not
+    boolean updateOn = false;
+    //location request
+    LocationRequest locationRequest;
+    //google's api for location services
+    FusedLocationProviderClient fusedLocationProviderClient;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +49,13 @@ public class GPSFragment extends Fragment {
         sw_locationsupdates = view.findViewById(R.id.sw_locationsupdates);
         sw_gps = view.findViewById(R.id.sw_gps);
 
+        //properties of Location
+        locationRequest = new LocationRequest();
+        //default time location check
+        locationRequest.setInterval(30000);
+        //default time location check when set to the most frequent update
+        locationRequest.setFastestInterval(5000);
+        locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
         return view;
     }
 }
