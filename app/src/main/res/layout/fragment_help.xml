@@ -181,7 +181,7 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
                 <LinearLayout
-                    android:id="@+id/report"
+                    android:id="@+id/report_form"
                     android:clickable="true"
                     android:focusable="true"
                     android:layout_width="match_parent"
@@ -209,4 +209,3 @@
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
-

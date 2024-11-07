@@ -25,8 +25,14 @@
             android:name=".OTPVerification"
             android:exported="false" />
         <activity
+            android:name=".ReportForm"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        </activity>
+
+        <activity
             android:name=".CountryDetailActivity"
             android:exported="false" />
+
         <activity
             android:name=".AffectedCountry"
             android:exported="false" />
