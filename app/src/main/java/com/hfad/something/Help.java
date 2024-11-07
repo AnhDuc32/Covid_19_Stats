@@ -1,6 +1,7 @@
 package com.hfad.something;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,6 +70,7 @@ public class Help extends Fragment {
         LinearLayout linearLayout2 = view.findViewById(R.id.doctor);
         LinearLayout linearLayout3 = view.findViewById(R.id.hospital);
         LinearLayout linearLayout4 = view.findViewById(R.id.consult);
+        LinearLayout linearLayout5 = view.findViewById(R.id.report_form);
 
         // Set click listeners for each LinearLayout
         linearLayout1.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +103,11 @@ public class Help extends Fragment {
                 // Handle click for linearLayout4
                 showPopup(R.layout.fragment_consult_popup);
             }
+        });
+
+        linearLayout5.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ReportForm.class);
+            startActivity(intent);
         });
 
         return view;
