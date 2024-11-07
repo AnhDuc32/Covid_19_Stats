@@ -32,7 +32,7 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
             case 2:
                 return new SignSymptomFragment();
             case 3:
-                return new Help();
+                return new SettingsFragment();
             default:
                 return new StatsFragment();
         }

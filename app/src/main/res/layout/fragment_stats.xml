@@ -431,25 +431,24 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:columnCount="2"
-            android:rowCount="2"
-            android:padding="5dp">
+            android:rowCount="2">
 
             <TextView
                 android:layout_width="178dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:text="@string/daily_stats"
                 android:textStyle="bold"
+                android:paddingTop="5dp"
                 android:paddingLeft="10dp"
                 android:textColor="@color/black"
-                android:textSize="20dp"/>
-
+                android:textSize="20dp"
+                android:layout_gravity="top"/>
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="178dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_row="0"
-                android:layout_column="1"
-                android:paddingBottom="16dp"/>
+                android:layout_column="1" />
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart"

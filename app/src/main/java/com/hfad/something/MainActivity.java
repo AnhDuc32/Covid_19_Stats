@@ -45,26 +45,9 @@ public class MainActivity extends AppCompatActivity {
                     tab.setIcon(R.drawable.virus);
                     break;
                 case 3:
-                    tab.setIcon(R.drawable.haphoi);
+                    tab.setIcon(R.drawable.baseline_settings_24);
                     break;
             }
         }).attach();
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.nav_settings) {
-            // Open the SettingsFragment
-            SettingsFragment settingsFragment = new SettingsFragment();
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, settingsFragment)
-                    .addToBackStack(null)
-                    .commit();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
 }
