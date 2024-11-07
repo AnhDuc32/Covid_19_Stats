@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ import java.util.Map;
 public class SignUp extends AppCompatActivity {
 
     TextInputEditText textInputEditTextName,textInputEditTextEmail, textInputEditTextPassword,textInputEditTextconPassword,textInputEditTextPhone;
-    String name, email, password,phone;
+    String name, email, password,phone, conPassword;
 
     TextView textViewError;
     ProgressBar progressBar;
@@ -135,9 +136,35 @@ public class SignUp extends AppCompatActivity {
                 name = String.valueOf(textInputEditTextName.getText());
                 email = String.valueOf(textInputEditTextEmail.getText());
                 password = String.valueOf(textInputEditTextPassword.getText());
+                conPassword = String.valueOf(textInputEditTextconPassword.getText());
                 //Intent intent = new Intent(SignUp.this, OTPVerification.class);
                 //intent.putExtra("email", getEmailText);
                 //startActivity(intent);
+
+                if (email.isEmpty()) {
+                    textInputEditTextEmail.setError("Email is required");
+                    return;
+                }
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    textInputEditTextEmail.setError("Please enter a valid email address");
+                    return;
+                }
+                if (phone.isEmpty()) {
+                    textInputEditTextPhone.setError("Phone number is required");
+                    return;
+                }
+                if (name.isEmpty()) {
+                    textInputEditTextName.setError("Name is required");
+                    return;
+                }
+                if (password.isEmpty()) {
+                    textInputEditTextPassword.setError("Password is required");
+                    return;
+                }
+                if (!password.equals(conPassword)) {
+                    textInputEditTextconPassword.setError("Passwords do not match");
+                    return;
+                }
 
 
                 textViewError.setVisibility(View.GONE);
@@ -192,5 +219,9 @@ public class SignUp extends AppCompatActivity {
                 finish();
             }
         });
+
+
+
+
     }
 }

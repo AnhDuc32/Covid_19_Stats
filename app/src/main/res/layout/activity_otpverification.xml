@@ -121,29 +121,6 @@
         android:textColor="@color/white"
         android:textAllCaps="true"/>
 
-    <LinearLayout
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:gravity="center">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:hint="Didn't recieve OTP ?"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/resendBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:hint=" Resend Code"
-            android:textColorHint="#4287f5"
-            android:textSize="20dp" />
-    </LinearLayout>
 
 </LinearLayout>

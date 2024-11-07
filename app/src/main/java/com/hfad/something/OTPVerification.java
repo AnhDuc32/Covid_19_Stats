@@ -50,9 +50,7 @@ public class OTPVerification extends AppCompatActivity {
     };
 
     private EditText otpEt1, otpEt2, otpEt3, otpEt4;
-    private TextView resendBtn;
-    private boolean resendEnabled = false;
-    private int resendTime = 60;
+
     private int selectedETPosition = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +62,7 @@ public class OTPVerification extends AppCompatActivity {
         otpEt3 = findViewById(R.id.otpET3);
         otpEt4 = findViewById(R.id.otpET4);
 
-        resendBtn = findViewById(R.id.resendBtn);
+
 
         final Button verifyBtn = findViewById(R.id.verifyBtn);
 
@@ -73,7 +71,6 @@ public class OTPVerification extends AppCompatActivity {
 
 
         final String getEmail = getIntent().getStringExtra("email");
-        final String getPhone = getIntent().getStringExtra("phone");
 
         otpEmail.setText(getEmail);
 
@@ -85,15 +82,7 @@ public class OTPVerification extends AppCompatActivity {
 
         showKeyboard(otpEt1);
 
-        startCountDownTimer();
-        resendBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (resendEnabled) {
-                    startCountDownTimer();
-                }
-            }
-        });
+
 
         verifyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,26 +104,6 @@ public class OTPVerification extends AppCompatActivity {
 
         }
 
-        private void startCountDownTimer() {
-            resendEnabled = false;
-            resendBtn.setTextColor(Color.parseColor("#99000000"));
-
-            new CountDownTimer(resendTime * 1000, 1000) {
-
-                @Override
-                public void onTick(long millisUntilFinished) {
-                    resendBtn.setText("Resend Code (" + (millisUntilFinished / 1000) + ")");
-                }
-
-
-                @Override
-                public void onFinish() {
-                    resendEnabled = true;
-                    resendBtn.setText("Resend Code");
-                    resendBtn.setTextColor(getResources().getColor(R.color.black));
-                }
-            }.start();
-        }
 
         @Override
         public boolean onKeyUp ( int keyCode, KeyEvent event){
