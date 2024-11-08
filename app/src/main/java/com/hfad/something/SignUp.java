@@ -41,12 +41,6 @@ public class SignUp extends AppCompatActivity {
     ProgressBar progressBar;
 
 
-
-
-
-
-    //private boolean passwordShowing = false;
-    //private boolean conPasswordShowing = false;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_sign_symptom, container, false);
@@ -65,68 +59,9 @@ public class SignUp extends AppCompatActivity {
         textViewError = findViewById(R.id.error);
 
 
-
-
-
-
-        // final ImageView conPasswordIcon = findViewById(R.id.conPasswordIcon);
-
-
-        // final ImageView passwordIcon = findViewById(R.id.passwordIcon);
-
         final Button signUpButton = findViewById(R.id.signUpButton);
         final TextView signIn = findViewById(R.id.signIn);
         progressBar = findViewById(R.id.loading);
-
-        /*
-        passwordIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (passwordShowing) {
-                    // Hide password
-                    passwordShowing = false;
-                    textInputEditTextPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    textInputEditTextPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    passwordIcon.setImageResource(R.drawable.eyes); // Closed eye icon
-                } else {
-                    // Show password
-                    passwordShowing = true;
-                    textInputEditTextPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    textInputEditTextPassword.setTransformationMethod(null);
-                    passwordIcon.setImageResource(R.drawable.eyes_hide); // Open eye icon
-                }
-                // Retain cursor position
-                textInputEditTextPassword.setSelection(textInputEditTextPassword.length());
-            }
-        });
-        */
-
-
-
-        /*
-        conPasswordIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (conPasswordShowing) {
-                    // Hide password
-                    conPasswordShowing = false;
-                    textInputEditTextconPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    textInputEditTextconPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    conPasswordIcon.setImageResource(R.drawable.eyes); // Closed eye icon
-                } else {
-                    // Show password
-                    conPasswordShowing = true;
-                    textInputEditTextconPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    textInputEditTextconPassword.setTransformationMethod(null);
-                    conPasswordIcon.setImageResource(R.drawable.eyes_hide); // Open eye icon
-                }
-                // Retain cursor position
-                textInputEditTextconPassword.setSelection(textInputEditTextconPassword.length());
-            }
-        });
-        */
-
-
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,16 +70,12 @@ public class SignUp extends AppCompatActivity {
                 name = String.valueOf(textInputEditTextName.getText());
                 email = String.valueOf(textInputEditTextEmail.getText());
                 password = String.valueOf(textInputEditTextPassword.getText());
-                //Intent intent = new Intent(SignUp.this, OTPVerification.class);
-                //intent.putExtra("email", getEmailText);
-                //startActivity(intent);
-
 
                 textViewError.setVisibility(View.GONE);
                 progressBar.setVisibility(View.VISIBLE);
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://172.16.0.148/login_register/register.php";
+                String url ="http://192.168.1.9/login_register/register.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
