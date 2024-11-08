@@ -58,18 +58,21 @@
                 android:padding="10dp">
 
                 <LinearLayout
+                    android:id="@+id/button1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_gravity="start"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/border"
                     android:orientation="vertical"
-                    android:padding="8dp">
+                    android:padding="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:src="@drawable/fever" />
 
@@ -79,12 +82,14 @@
                         android:layout_gravity="center"
                         android:text="Fever/Chills"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/button2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_gravity="end"
                     android:layout_margin="5dp"
                     android:background="@drawable/border"
@@ -93,8 +98,8 @@
                     android:layout_weight="1">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:src="@drawable/cough" />
 
@@ -104,7 +109,8 @@
                         android:layout_gravity="center"
                         android:text="Cough"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
 
                 </LinearLayout>
 
@@ -117,8 +123,9 @@
                 android:padding="10dp">
 
                 <LinearLayout
+                    android:id="@+id/button3"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_gravity="start"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
@@ -127,8 +134,8 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center"
 
                         android:src="@drawable/diff_breathing" />
@@ -139,13 +146,15 @@
                         android:layout_gravity="center"
                         android:text="Barely breath"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/button4"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_gravity="end"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
@@ -154,8 +163,8 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:src="@drawable/sore_throat" />
 
@@ -165,7 +174,8 @@
                         android:layout_gravity="center"
                         android:text="Sore throat"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"/>
 
                 </LinearLayout>
 
@@ -178,8 +188,9 @@
                 android:padding="10dp">
 
                 <LinearLayout
+                    android:id="@+id/button5"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/border"
                     android:gravity="start"
@@ -188,8 +199,8 @@
                     android:layout_weight="1">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
 
                         android:src="@drawable/runny_nose"
                         android:layout_gravity="center"/>
@@ -200,13 +211,15 @@
                         android:textStyle="bold"
                         android:text="Runny nose"
                         android:textSize="18sp"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"/>
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/button6"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/border"
                     android:orientation="vertical"
@@ -214,8 +227,8 @@
                     android:layout_weight="1">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:src="@drawable/loss_taste" />
 
@@ -225,7 +238,8 @@
                         android:layout_gravity="center"
                         android:textStyle="bold"
                         android:text="Loss taste"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:layout_marginTop="10dp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -237,8 +251,9 @@
                 android:padding="10dp">
 
                 <LinearLayout
+                    android:id="@+id/button7"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/border"
@@ -247,8 +262,8 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:src="@drawable/fatigue" />
 
@@ -258,13 +273,15 @@
                         android:layout_gravity="center"
                         android:textStyle="bold"
                         android:text="Fatigue"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:layout_marginTop="10dp"/>
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/button8"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/border"
@@ -272,8 +289,8 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center"
 
                         android:src="@drawable/aches" />
@@ -285,7 +302,8 @@
 
                         android:textStyle="bold"
                         android:text="Body aches"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:layout_marginTop="10dp"/>
 
                 </LinearLayout>
 
@@ -301,8 +319,9 @@
                 android:paddingBottom="50dp">
 
                 <LinearLayout
+                    android:id="@+id/button9"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/border"
@@ -310,8 +329,8 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:src="@drawable/headaches" />
 
@@ -321,12 +340,14 @@
                         android:layout_gravity="center"
                         android:text="Headaches"
                         android:textStyle="bold"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:layout_marginTop="10dp"/>
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/button10"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/border"
@@ -334,8 +355,8 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:src="@drawable/nausea" />
 
@@ -345,7 +366,8 @@
                         android:layout_gravity="center"
                         android:textStyle="bold"
                         android:text="Nausea"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:layout_marginTop="10dp"/>
 
                 </LinearLayout>
 

@@ -146,52 +146,15 @@
 
         </RelativeLayout>
 
-        <!-- Security -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-
-                android:id="@+id/securityIcon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-
-                android:src="@drawable/shield" />
-            <TextView
-                android:layout_marginStart="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="Security and Privacy"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:layout_toEndOf="@+id/securityIcon"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/right_arrow"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"/>
-
-        </RelativeLayout>
-
-
-
         <!-- TextSize -->
-
         <RelativeLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <ImageView
-
                 android:id="@+id/textSizeIcon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-
                 android:src="@drawable/text_size" />
             <TextView
                 android:layout_marginStart="20dp"
@@ -258,7 +221,7 @@
 
         <!-- Send us a message -->
         <RelativeLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -285,7 +248,6 @@
                 android:src="@drawable/right_arrow"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"/>
-
         </RelativeLayout>
 
         <!-- About us -->
@@ -309,56 +271,41 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/aboutUsIcon" />
-
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/right_arrow"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"/>
-
         </RelativeLayout>
-        <LinearLayout
-            android:background="@drawable/round_back_white10_20"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:orientation="vertical"
-            android:padding="5dp">
-
-            <!-- Log out -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-
-                <ImageView
-
-                    android:id="@+id/logoutIcon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:padding="7dp"
-
-                    android:src="@drawable/exit" />
-                <TextView
-                    android:layout_marginStart="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Log Out"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:layout_toEndOf="@+id/logoutIcon" />
-
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:background="@drawable/round_back_white10_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        android:padding="15dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/logoutIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="7dp"
+            android:src="@drawable/exit" />
+        <TextView
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Log Out"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/logoutIcon" />
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
-
-
-
-
-
