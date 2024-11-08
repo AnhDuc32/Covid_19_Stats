@@ -23,7 +23,7 @@
             android:gravity="center"
             android:layout_marginEnd="8dp"
             android:padding="6dp"
-            android:text="Symptoms"
+            android:text="symptoms"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="25dp"
@@ -80,7 +80,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Fever/Chills"
+                        android:text="@string/fever_chills"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:layout_marginTop="10dp"/>
@@ -107,7 +107,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Cough"
+                        android:text="@string/cough"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:layout_marginTop="10dp"/>
@@ -144,7 +144,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Barely breath"
+                        android:text="@string/barely_breath"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:layout_marginTop="10dp"/>
@@ -172,7 +172,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Sore throat"
+                        android:text="@string/sore_throat"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:layout_marginTop="10dp"/>
@@ -209,7 +209,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:text="Runny nose"
+                        android:text="@string/runny_nose"
                         android:textSize="18sp"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"/>
@@ -237,7 +237,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:textStyle="bold"
-                        android:text="Loss taste"
+                        android:text="@string/loss_taste"
                         android:textSize="18sp"
                         android:layout_marginTop="10dp"/>
                 </LinearLayout>
@@ -272,7 +272,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:textStyle="bold"
-                        android:text="Fatigue"
+                        android:text="@string/fatigue"
                         android:textSize="18sp"
                         android:layout_marginTop="10dp"/>
 
@@ -301,7 +301,7 @@
                         android:layout_gravity="center"
 
                         android:textStyle="bold"
-                        android:text="Body aches"
+                        android:text="@string/body_aches"
                         android:textSize="18sp"
                         android:layout_marginTop="10dp"/>
 
@@ -338,7 +338,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Headaches"
+                        android:text="@string/headaches"
                         android:textStyle="bold"
                         android:textSize="18sp"
                         android:layout_marginTop="10dp"/>
@@ -365,7 +365,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:textStyle="bold"
-                        android:text="Nausea"
+                        android:text="@string/nausea"
                         android:textSize="18sp"
                         android:layout_marginTop="10dp"/>
 
@@ -399,7 +399,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_marginTop="5dp"
-            android:text="If someone is showing any of these signs, call 911 or call ahead to your local emergency facility. Notify the operator that you are seeking care for someone who has or may have COVID-19."
+            android:text="@string/warning"
             android:textColor="@color/white"
             android:textSize="18dp" />
 

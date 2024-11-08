@@ -140,15 +140,14 @@ public class SignSymptomFragment extends Fragment {
 
 
             Window window = dialog.getWindow();
-            window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            window.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
 
             WindowManager.LayoutParams layoutParams = window.getAttributes();
             layoutParams.gravity = Gravity.CENTER;
-            layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
 
-
-            layoutParams.horizontalMargin = 0.3f;
+            int screenWidth = getResources().getDisplayMetrics().widthPixels;
+            layoutParams.width = (int) (screenWidth * 0.927);
             window.setAttributes(layoutParams);
         }
 

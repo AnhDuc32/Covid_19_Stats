@@ -23,14 +23,14 @@
             android:textStyle="bold"
             android:textSize="30dp"
             android:textColor="@color/black"
-            android:text="Sign Up"
+            android:text="@string/sign_up"
             android:layout_marginTop="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Create a new account"
+            android:text="@string/create_a_new_account"
             android:layout_marginTop="5dp"/>
 
 
@@ -41,7 +41,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="50dp"
-            android:hint="Full Name"
+            android:hint="@string/full_name"
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
@@ -67,7 +67,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
-            android:hint="E-mail"
+            android:hint="@string/email"
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
@@ -91,7 +91,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
-            android:hint="Phone Number"
+            android:hint="@string/Phone_number"
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
@@ -115,7 +115,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
-            android:hint="Password "
+            android:hint="@string/password"
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
@@ -140,7 +140,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
-            android:hint="Confirm password "
+            android:hint="@string/confirm_password"
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
@@ -263,7 +263,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/relative_background"
-            android:text="Sign up"
+            android:text="@string/sign_up"
             android:gravity="center"
             android:padding="20dp"
             android:layout_marginStart="30dp"
@@ -283,7 +283,7 @@
                 android:layout_gravity="center"
                 android:textSize="20dp"
 
-                android:hint="Already have an account ?" />
+                android:hint="@string/already_have_an_account" />
             <TextView
                 android:id="@+id/signIn"
                 android:layout_width="wrap_content"
@@ -291,7 +291,7 @@
                 android:layout_gravity="center"
                 android:textSize="20dp"
                 android:textColorHint="#4287f5"
-                android:hint=" Sign in" />
+                android:hint="@string/sign_in" />
         </LinearLayout>
 
 

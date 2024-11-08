@@ -1,0 +1,122 @@
+<resources>
+    // App name
+    <string name="app_name">THÔNG SỐ COVID-19</string>
+
+    // StartScreen
+    <string name="protect_yourself">Bảo vệ bạn và người thân</string>
+    <string name="wear_mask">Đeo khẩu trang</string>
+    <string name="wash_hand">Rửa tay</string>
+    <string name="keep_distance">Giữ khoảng cách</string>
+    <string name="startBtn">Bắt đầu</string>
+
+    // StatsFragment
+    <string name="overview">Thông số tổng quát</string>
+    <string name="rate_recover">Tỉ lệ phục hồi</string>
+    <string name="daily_stats">Thông số ngày</string>
+    <string name="total_stats">Thông số tổng</string>
+    <string name="stats">Thông số toàn cầu</string>
+    <string name="active">Đang mắc bệnh</string>
+    <string name="active_case">Ca mắc</string>
+    <string name="recovered">Đã hồi phục</string>
+    <string name="total_case">Tổng số ca</string>
+    <string name="deaths">Tử vong</string>
+    <string name="covid_19">Covid-19</string>
+    <string name="country">Quốc Gia</string>
+    <string name="cases">Tổng số ca</string>
+    <string name="increment_number">+123456</string>
+    <string name="number">0123456789</string>
+    <string name="toggle_vietnam">Việt Nam</string>
+    <string name="toggle_global">Quốc Tế</string>
+
+    // AffectedCountry
+    <string name="search">Tìm quốc gia</string>
+
+    // MyCustomAdapter
+    <string name="country_name">Tên nước</string>
+
+    <string name="open_nav">Mở thanh định hướng</string>
+    <string name="close_nav">Đóng thanh định hướng</string>
+
+    <string name="settings">CÀI ĐẶT</string>
+    <string name="user_name">Tên người dùng</string>
+    <string name="phone_number">Số điện thoại</string>
+    <string name="edit_profile">Chỉnh sửa thông tin</string>
+    <string name="night_mode">Chế độ nền tối</string>
+    <string name="notifications">Thông báo</string>
+    <string name="text_size">Cỡ chữ</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="send_us_a_message">Gửi tin nhắn cho chúng tôi</string>
+    <string name="about_us">Giới thiệu</string>
+    <string name="log_out">Đăng xuất</string>
+    <string name="today_cases">Ca bệnh hôm nay</string>
+    <string name="Deaths">Tử vong</string>
+    <string name="today_deaths">Ca tử vong hôm nay</string>
+    <string name="Recovered">Đã hồi phục</string>
+    <string name="active_cases">Đang mắc bệnh</string>
+    <string name="critical_cases">Nguy kịch</string>
+    <string name="digit_code">Hãy nhập mã chúng tôi đã gửi cho bạn</string>
+    <string name="email_address">Địa chỉ Email</string>
+    <string name="enter_otp">Nhập OTP</string>
+    <string name="enter_new_password">Nhập mật khẩu mới</string>
+    <string name="verify">Xác nhận</string>
+    <string name="report_form">Đơn báo cáo</string>
+    <string name="personal_information">Thông tin cá nhân</string>
+    <string name="firstname">Tên</string>
+    <string name="lastname">Họ</string>
+    <string name="date_of_birth">Ngày tháng năm sinh</string>
+    <string name="address">Địa Chỉ</string>
+    <string name="street_address">Địa chỉ nhà</string>
+    <string name="city">Thành phố</string>
+    <string name="province">Quận/Huyện</string>
+    <string name="Country">Quốc Gia</string>
+    <string name="id">ID</string>
+    <string name="contact_information">Thng tin liên lạc</string>
+    <string name="email">Email</string>
+    <string name="Phone_number">Số điện thoại</string>
+    <string name="symptoms">Triệu chứng</string>
+    <string name="fever_or_chills">Cảm/Sốt</string>
+    <string name="shortness_of_breath">Khó thở</string>
+    <string name="runny_nose">Sổ mũi</string>
+    <string name="fatigue">Mệt mỏi</string>
+    <string name="headache">Đau đầu</string>
+    <string name="nausea_or_vomiting">Nôn mửa</string>
+    <string name="muscle_or_body_aches">Đau nhức cơ thể</string>
+    <string name="loss_of_taste_or_smell">Mất vị giác</string>
+    <string name="sore_throat">Viêm họng</string>
+    <string name="cough">Ho</string>
+    <string name="submit">Nộp đơn</string>
+    <string name="please_enter_your_email_address">Hãy nhập email của bạn</string>
+    <string name="sign_up">Đăng ký</string>
+    <string name="create_a_new_account">Tạo tài khoản</string>
+    <string name="full_name">Tên đầy đủ</string>
+    <string name="password">Mật khẩu</string>
+    <string name="confirm_password">Xác nhận mật khẩu</string>
+    <string name="already_have_an_account">Đã có tài khoản?</string>
+    <string name="sign_in">Đăng nhập</string>
+    <string name="login">Đăng nhập</string>
+    <string name="forgot_password">Quên mật khẩu</string>
+    <string name="don_t_have_account">Chưa có tài khoản?</string>
+    <string name="help">Trợ giúp</string>
+    <string name="hotline">Đường dây nóng</string>
+    <string name="hospital">Bệnh viện</string>
+    <string name="report_a_case">Báo cáo ca bệnh</string>
+    <string name="close">Đóng</string>
+    <string name="fever_chills">Cảm/Sốt</string>
+    <string name="barely_breath">Khó thở</string>
+    <string name="loss_taste">Mất vị giác</string>
+    <string name="body_aches">Đau nhức cơ thể</string>
+    <string name="headaches">Đau đầu</string>
+    <string name="nausea">Nôn mửa</string>
+    <string name="warning">Nếu ai đó có bất kỳ dấu hiệu nào trong số này, hãy gọi 911 hoặc gọi trước đến cơ sở y tế khẩn cấp địa phương của bạn. Thông báo cho nhân viên tổng đài rằng bạn đang tìm kiếm sự chăm sóc cho người có thể đã hoặc đang mắc COVID-19.</string>
+    <string name="fever">Cảm</string>
+    <string name="fever_details">Tạm thời tăng nhiệt độ cơ thể, thường do nhiễm trùng. Đây là phản ứng tự nhiên của cơ thể để chống lại bệnh, thường là trên 100,4°F (38°C).</string>
+    <string name="nausea_details">Cảm giác khó chịu ở dạ dày thường dẫn đến cảm giác muốn nôn. Nó có thể do nhiều yếu tố khác nhau gây ra, bao gồm say tàu xe, ngộ độc thực phẩm, lo âu hoặc ốm.</string>
+    <string name="cough_details">Hành động phản xạ để làm sạch họng hoặc đường hô hấp khỏi các chất kích thích, đờm hoặc các hạt lạ. Nó có thể là ho khan (không có đờm) hoặc ho có đờm (có đờm)..</string>
+    <string name="barelybreath_details">Cảm giác khó khăn hoặc khó chịu khi thở, thường được miêu tả như không thể hít đủ không khí. Nó có thể do gắng sức, các tình trạng y tế hoặc căng thẳng gây ra.</string>
+    <string name="losstaste_details">Mất khả năng phát hiện hương vị (vị giác) hoặc mùi (khứu giác), thường do các bệnh nhiễm trùng như cảm lạnh, cúm, hoặc COVID-19 gây ra, hoặc do tắc nghẽn mũi hoặc các vấn đề về thần kinh.</string>
+    <string name="fatigue_details">Cảm giác mệt mỏi cực độ hoặc thiếu năng lượng, thường do gắng sức về thể chất hoặc tinh thần, bệnh tật, hoặc thiếu ngủ gây ra. Nó có thể là tạm thời hoặc mãn tính, tùy thuộc vào nguyên nhân cơ bản.</string>
+    <string name="bodyaches_details">Cảm giác đau hoặc khó chịu tổng quát ở cơ và khớp, thường do các bệnh nhiễm trùng như cúm, căng thẳng, hoặc gắng sức thể chất gây ra. Cảm giác này có thể từ đau nhức nhẹ đến đau dữ dội.</string>
+    <string name="headache_details">Đau hoặc khó chịu ở đầu, da đầu, hoặc cổ. Cảm giác này có thể từ nhẹ đến nghiêm trọng và có thể do căng thẳng, mất nước, căng cơ, hoặc các vấn đề sức khỏe tiềm ẩn như chứng migraine (đau nửa đầu) gây ra.</string>
+    <string name="pain_irritation_or_scratchiness_in_the_throat_often_worsened_by_swallowing_it_s_commonly_caused_by_infections_like_colds_or_strep_throat">Đau, kích ứng hoặc cảm giác ngứa rát ở họng, thường trở nên tồi tệ hơn khi nuốt. Thường do các bệnh nhiễm trùng như cảm lạnh hoặc viêm họng liên cầu khuẩn gây ra.</string>
+    <string name="the_excess_production_of_mucus_that_drips_or_runs_from_the_nostrils_it_s_often_caused_by_colds_allergies_or_irritants_like_dust_or_smoke">Sự sản xuất quá mức chất nhầy chảy hoặc rỉ ra từ lỗ mũi. Thường do cảm lạnh, dị ứng, hoặc các chất kích thích như bụi bẩn hoặc khói gây ra.</string>
+</resources>

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
-        android:text="Sore throat"
+        android:text="@string/sore_throat"
         android:textColor="@color/white"
         android:textSize="16dp"
         android:gravity="center"
@@ -18,8 +18,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pain, irritation, or scratchiness in the throat, often worsened by swallowing.
-         It’s commonly caused by infections like colds or strep throat."
+        android:text="@string/pain_irritation_or_scratchiness_in_the_throat_often_worsened_by_swallowing_it_s_commonly_caused_by_infections_like_colds_or_strep_throat"
         android:gravity="center"
         android:textSize="16dp"/>
 

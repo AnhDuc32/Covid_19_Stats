@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
-        android:text="Runny nose"
+        android:text="@string/runny_nose"
         android:textColor="@color/white"
         android:textSize="16dp"
         android:gravity="center"
@@ -18,8 +18,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="The excess production of mucus that drips or runs from the nostrils.
-         It’s often caused by colds, allergies, or irritants like dust or smoke."
+        android:text="@string/the_excess_production_of_mucus_that_drips_or_runs_from_the_nostrils_it_s_often_caused_by_colds_allergies_or_irritants_like_dust_or_smoke"
         android:gravity="center"
         android:textSize="16dp"/>
 
