@@ -46,7 +46,7 @@ import java.util.regex.Pattern;
 
 public class StartScreen extends AppCompatActivity {
    
-    Button startButton;
+    Button startButton,forgetButton;
     String name,email,password, apiKey;
     TextInputEditText textInputEditTextEmail, textInputEditTextPassword;
     TextView textViewError;
@@ -170,7 +170,7 @@ public class StartScreen extends AppCompatActivity {
                 email = String.valueOf(textInputEditTextEmail.getText());
                 password = String.valueOf(textInputEditTextPassword.getText());
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://172.16.0.148/login_register/login.php";
+                String url ="http://192.168.20.117/login_register/login.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -231,7 +231,13 @@ public class StartScreen extends AppCompatActivity {
                 startActivity(new Intent(StartScreen.this, SignUp.class));
             }
         });
+        forgetButton = findViewById(R.id.forgotPassword);
+        forgetButton.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(StartScreen.this, ResetPassword.class));
+            }
+        });
+        }
+
     }
-
-
-}

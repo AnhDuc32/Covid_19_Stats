@@ -171,7 +171,7 @@ public class SignUp extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://172.16.0.148/login_register/register.php";
+                String url ="http://192.168.20.117/login_register/register.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
