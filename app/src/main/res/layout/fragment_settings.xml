@@ -41,34 +41,34 @@
         android:layout_height="61dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:src="@drawable/user_icon" />
+        android:src="@drawable/profile" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="@string/user_name"
+        android:text="Cao Thai Ha"
         android:textColor="@color/black"
         android:textSize="22dp"
         android:textStyle="bold"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/phone_number"
+        android:text="0942842452"
         android:textColor="@color/black"
         android:textSize="12sp"
         android:layout_gravity="center"/>
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:paddingStart="30dp"
-        android:layout_gravity="center"
-        android:background="@drawable/round_back_secondary_100"
-        android:text="@string/edit_profile"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:paddingEnd="30dp"/>
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:paddingStart="30dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:background="@drawable/round_back_secondary_100"-->
+<!--        android:text="@string/edit_profile"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:paddingEnd="30dp"/>-->
     <LinearLayout
         android:background="@drawable/round_back_white10_20"
         android:layout_width="wrap_content"
@@ -181,13 +181,10 @@
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <ImageView
-
                 android:id="@+id/languageIcon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-
                 android:src="@drawable/language" />
             <TextView
                 android:layout_marginStart="20dp"
@@ -198,7 +195,6 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/languageIcon" />
-
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -284,7 +280,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:padding="15dp">
     <RelativeLayout
