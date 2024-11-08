@@ -37,7 +37,7 @@
                 android:layout_marginEnd="8dp"
                 android:gravity="center"
                 android:padding="6dp"
-                android:text="Report Form"
+                android:text="@string/report_form"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="25dp"
@@ -58,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Personal Information"
+            android:text="@string/personal_information"
             android:textSize="20dp" />
 
         <LinearLayout
@@ -73,7 +73,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/border"
-                android:hint="FirstName"
+                android:hint="@string/firstname"
                 android:padding="4dp" />
 
             <EditText
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/border"
-                android:hint="LastName"
+                android:hint="@string/lastname"
                 android:padding="4dp" />
 
         </LinearLayout>
@@ -91,14 +91,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/border"
-            android:hint="Date of Bith"
+            android:hint="@string/date_of_birth"
             android:padding="4dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Address"
+            android:text="@string/address"
             android:textSize="20dp" />
 
         <EditText
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/border"
-            android:hint="Street Address"
+            android:hint="@string/street_address"
             android:padding="4dp" />
 
         <LinearLayout
@@ -122,7 +122,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/border"
-                android:hint="City"
+                android:hint="@string/city"
                 android:padding="4dp" />
 
             <EditText
@@ -130,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/border"
-                android:hint="Province"
+                android:hint="@string/province"
                 android:padding="4dp" />
 
         </LinearLayout>
@@ -148,7 +148,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/border"
-                android:hint="Country"
+                android:hint="@string/Country"
                 android:padding="4dp" />
 
             <EditText
@@ -156,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/border"
-                android:hint="ID"
+                android:hint="@string/id"
                 android:padding="4dp" />
 
         </LinearLayout>
@@ -165,7 +165,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Contact Information"
+            android:text="@string/contact_information"
             android:textSize="20dp" />
 
         <LinearLayout
@@ -181,7 +181,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/border"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:padding="4dp" />
 
             <EditText
@@ -189,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/border"
-                android:hint="Phone Number"
+                android:hint="@string/Phone_number"
                 android:padding="4dp" />
 
         </LinearLayout>
@@ -199,7 +199,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Symptoms"
+            android:text="@string/symptoms"
             android:textSize="20dp" />
 
         <RadioGroup
@@ -221,66 +221,66 @@
                     android:id="@+id/radioOption1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fever or chills"
+                    android:text="@string/fever_or_chills"
                     android:layout_marginEnd="16dp"/>
 
                 <RadioButton
                     android:id="@+id/radioOption2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cough" />
+                    android:text="@string/cough" />
 
                 <RadioButton
                     android:id="@+id/radioOption3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Shortness of breath"
+                    android:text="@string/shortness_of_breath"
                     android:layout_marginEnd="16dp"/>
 
                 <RadioButton
                     android:id="@+id/radioOption4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sore throat" />
+                    android:text="@string/sore_throat" />
 
                 <RadioButton
                     android:id="@+id/radioOption5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Runny nose"
+                    android:text="@string/runny_nose"
                     android:layout_marginEnd="16dp"/>
 
                 <RadioButton
                     android:id="@+id/radioOption6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Loss of taste or smell" />
+                    android:text="@string/loss_of_taste_or_smell" />
 
                 <RadioButton
                     android:id="@+id/radioOption7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fatigue"
+                    android:text="@string/fatigue"
                     android:layout_marginEnd="16dp"/>
 
                 <RadioButton
                     android:id="@+id/radioOption8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Muscle or body aches" />
+                    android:text="@string/muscle_or_body_aches" />
 
                 <RadioButton
                     android:id="@+id/radioOption9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Headache"
+                    android:text="@string/headache"
                     android:layout_marginEnd="16dp"/>
 
                 <RadioButton
                     android:id="@+id/radioOption10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nausea or vomiting" />
+                    android:text="@string/nausea_or_vomiting" />
 
             </GridLayout>
         </RadioGroup>
@@ -291,7 +291,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Submit"
+            android:text="@string/submit"
             android:layout_gravity="center"/>
 
     </LinearLayout>

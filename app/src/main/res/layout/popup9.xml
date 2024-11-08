@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
-        android:text="Headaches"
+        android:text="@string/headache"
         android:textColor="@color/white"
         android:textSize="16dp"
         android:gravity="center"
@@ -18,8 +18,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pain or discomfort in the head, scalp, or neck. It can range from mild to severe and may be
-        caused by stress, dehydration, tension, or underlying health conditions like migraines."
+        android:text="@string/headache_details"
         android:gravity="center"
         android:textSize="16dp"/>
 

@@ -188,7 +188,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Today Cases"
+            android:text="@string/today_cases"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -215,7 +215,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Deaths"
+            android:text="@string/Deaths"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
@@ -242,7 +242,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Today Deaths"
+            android:text="@string/today_deaths"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
@@ -269,7 +269,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recovered"
+            android:text="@string/Recovered"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
@@ -296,7 +296,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Active Cases"
+            android:text="@string/active_cases"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
@@ -323,7 +323,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Critical Cases"
+            android:text="@string/critical_cases"
             android:textSize="20sp"
             android:textStyle="bold"/>
 

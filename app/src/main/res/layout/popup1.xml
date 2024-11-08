@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
-        android:text="Fever"
+        android:text="@string/fever"
         android:textColor="@color/white"
         android:textSize="16dp"
         android:gravity="center"
@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="A temporary rise in body temperature, often due to an infection. It's the body's natural response to fight illness, usually above 100.4°F (38°C)."
+        android:text="@string/fever_details"
         android:gravity="center"
         android:textSize="16dp"/>
 

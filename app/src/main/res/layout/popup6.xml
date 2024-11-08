@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
-        android:text="Loss taste"
+        android:text="@string/loss_taste"
         android:textColor="@color/white"
         android:textSize="16dp"
         android:gravity="center"
@@ -18,8 +18,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="The inability to detect flavors (taste) or odors (smell), often caused by infections
-        like colds, flu, or COVID-19, or due to nasal blockages or neurological issues."
+        android:text="@string/losstaste_details"
         android:gravity="center"
         android:textSize="16dp"/>
 

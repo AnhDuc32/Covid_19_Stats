@@ -16,14 +16,8 @@ public class SettingsFragment extends Fragment {
         // Required empty public constructor
     }
 
-    Switch nightModeSwitch;
-    boolean nightMode;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings, container, false);
     }
 }
