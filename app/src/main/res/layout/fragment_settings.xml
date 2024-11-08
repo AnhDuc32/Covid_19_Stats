@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white"
     android:layout_width="match_parent"
@@ -282,6 +283,7 @@
         </RelativeLayout>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/logoutButton"
         android:background="@drawable/round_back_white10_20"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -290,24 +292,25 @@
         android:layout_marginTop="40dp"
         android:orientation="vertical"
         android:padding="15dp">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/logoutIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:padding="7dp"
-            android:src="@drawable/exit" />
-        <TextView
-            android:layout_marginStart="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="Log Out"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_toEndOf="@+id/logoutIcon" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/logoutIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="7dp"
+                android:src="@drawable/exit" />
+            <TextView
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Log Out"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_toEndOf="@+id/logoutIcon" />
         </RelativeLayout>
+
     </LinearLayout>
 </LinearLayout>
