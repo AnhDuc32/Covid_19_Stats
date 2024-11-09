@@ -1,10 +1,8 @@
 package com.hfad.something;
 
 import android.content.Context;
-<<<<<<< HEAD
-=======
+
 import android.content.Intent;
->>>>>>> e0f30ab59019680b3f450e67336b254e17f2ea4c
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -16,7 +14,6 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -24,7 +21,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.Locale;
-=======
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -38,7 +34,6 @@ import com.android.volley.toolbox.Volley;
 
 import java.util.HashMap;
 import java.util.Map;
->>>>>>> e0f30ab59019680b3f450e67336b254e17f2ea4c
 
 public class SettingsFragment extends Fragment {
 
@@ -46,15 +41,11 @@ public class SettingsFragment extends Fragment {
         // Required empty public constructor
     }
 
-<<<<<<< HEAD
 
-=======
-    Switch nightModeSwitch;
-    boolean nightMode;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     RequestQueue queue;
->>>>>>> e0f30ab59019680b3f450e67336b254e17f2ea4c
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
