@@ -28,8 +28,4 @@
         <item name="android:background">#FFF</item>
     </style>
 
-    <style name="Text">
-        <item name="android:background">#000</item>
-    </style>
-
 </resources>
