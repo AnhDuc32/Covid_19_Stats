@@ -32,6 +32,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import nl.bryanderidder.themedtogglebuttongroup.ThemedButton;
+import nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup;
+
 public class AffectedCountry extends Fragment {
     public static List<CountryModel> countryModelList = new ArrayList<>();
 
@@ -39,6 +44,9 @@ public class AffectedCountry extends Fragment {
     MyCustomAdapter myCustomAdapter;
     ListView listView;
     EditText editSearch;
+    ThemedButton btnVietnam;
+    ThemedButton btnGlobal;
+    ThemedToggleButtonGroup toggleButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,8 +54,11 @@ public class AffectedCountry extends Fragment {
 
         editSearch = view.findViewById(R.id.editSearch);
         listView = view.findViewById(R.id.listView);
+        toggleButton = view.findViewById(R.id.toggleButton);
+        btnVietnam = view.findViewById(R.id.btnVietnam);
+        btnGlobal = view.findViewById(R.id.btnGlobal);
 
-        fetchCountryData();
+        setupToggleButton();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -81,9 +92,27 @@ public class AffectedCountry extends Fragment {
         return view;
     }
 
-    private void fetchCountryData() {
+    private void setupToggleButton() {
+        fetchCountryData("https://disease.sh/v3/covid-19/countries");
+        toggleButton.selectButton(R.id.btnGlobal);
+        toggleButton.setOnSelectListener(new Function1<ThemedButton, Unit>() {
+            @Override
+            public Unit invoke(ThemedButton button) {
+                int buttonId = button.getId();
+                if (buttonId == R.id.btnGlobal) {
+                    fetchCountryData("https://disease.sh/v3/covid-19/countries");
+                    editSearch.setHint("Search Country");
+                } else if (buttonId == R.id.btnVietnam) {
+                    fetchCityData("https://shy-baboons-try.loca.lt/data");
+                    editSearch.setHint("Search City");
+                }
+                return Unit.INSTANCE;
+            }
+        });
+    }
+
+    private void fetchCountryData(String url) {
         countryModelList.clear();
-        String url = "https://disease.sh/v3/covid-19/countries";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -105,6 +134,53 @@ public class AffectedCountry extends Fragment {
                                 String flag = object.getString("flag");
 
                                 countryModel = new CountryModel(flag, countryName, cases, todayCases, deaths, todayDeaths, recovered, active, critical);
+                                countryModelList.add(countryModel);
+                            }
+
+                            myCustomAdapter = new MyCustomAdapter(getActivity(), countryModelList);
+                            listView.setAdapter(myCustomAdapter);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getActivity(), "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
+    }
+
+    private void fetchCityData(String url) {
+        countryModelList.clear();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(response);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                String cityName = jsonObject.getString("name");
+
+                                JSONObject object = jsonObject.getJSONObject("statistics");
+
+                                String cases = object.getString("total_cases");
+                                String todayCases = object.getString("new_cases");
+                                String deaths = object.getString(   "total_deaths");
+                                String todayDeaths = object.getString("new_deaths");
+                                String recovered = object.getString("total_recovered");
+                                String active = object.getString("active_cases");
+                                String critical = "0";
+
+                                String flag = jsonObject.getString("logo_url");
+
+                                countryModel = new CountryModel(flag, cityName, cases, todayCases, deaths, todayDeaths, recovered, active, critical);
                                 countryModelList.add(countryModel);
                             }
 
