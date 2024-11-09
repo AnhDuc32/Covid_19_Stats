@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -21,12 +20,67 @@
         android:background="@drawable/edittext_shadow"
         android:drawableStart="@drawable/baseline_search_24"
         tools:ignore="RtlSymmetry" />
+
+    <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+        android:id="@+id/toggleButton"
+        android:layout_below="@id/editSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_background_toggle_group"
+        app:toggle_horizontalSpacing="0dp"
+        app:toggle_selectableAmount="1"
+        app:toggle_requiredAmount="1"
+        app:toggle_selectAnimation="fade">
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/btnVietnam"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            app:toggle_text="@string/toggle_vietnam"
+            app:toggle_textSize="20dp"
+            app:toggle_textAlignment="center"
+            app:toggle_fontFamily="Roboto"
+            app:toggle_backgroundColor="#4A5B64"
+            app:toggle_selectedBackgroundColor="@color/white"
+            app:toggle_textColor="@color/white"
+            app:toggle_selectedTextColor="@color/black"
+            app:toggle_btnCornerRadius="20dp"
+            app:toggle_borderWidth="1dp"
+            app:backgroundTint="@null"
+            app:strokeWidth="0dp"
+            app:cornerRadius="20dp"/>
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/btnGlobal"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            app:toggle_text="@string/toggle_global"
+            app:toggle_textSize="20dp"
+            app:toggle_paddingRight="10dp"
+            app:toggle_paddingLeft="10dp"
+            app:toggle_textAlignment="center"
+            app:toggle_fontFamily="Roboto"
+            app:toggle_backgroundColor="#4A5B64"
+            app:toggle_selectedBackgroundColor="@color/white"
+            app:toggle_textColor="@color/white"
+            app:toggle_selectedTextColor="@color/black"
+            app:toggle_btnCornerRadius="20dp"
+            app:toggle_borderWidth="1dp"
+            app:backgroundTint="@null"
+            app:strokeWidth="0dp"
+            app:cornerRadius="20dp"/>
+    </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listView"
-        android:layout_below="@+id/editSearch"
-        android:layout_margin="15dp"
-        android:background="@color/color_two"/>
+        android:layout_below="@id/editSearch"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/color_two"
+        android:layout_marginBottom="70dp"/>
 
 </RelativeLayout>

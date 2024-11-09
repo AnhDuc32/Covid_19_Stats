@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SETTINGS"
+            android:text="@string/settings"
             android:layout_centerInParent="true"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -42,20 +42,20 @@
         android:layout_height="61dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:src="@drawable/user_icon" />
+        android:src="@drawable/profile" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="User Name"
+        android:text="Cao Thai Ha"
         android:textColor="@color/black"
         android:textSize="22dp"
         android:textStyle="bold"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="phone_number"
+        android:text="0942842452"
         android:textColor="@color/black"
         android:textSize="12sp"
         android:layout_gravity="center"/>
@@ -66,7 +66,7 @@
         android:paddingStart="30dp"
         android:layout_gravity="center"
         android:background="@drawable/round_back_secondary_100"
-        android:text="Edit Profile"
+        android:text="@string/edit_profile"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:paddingEnd="30dp"/>
@@ -86,23 +86,20 @@
             android:layout_height="wrap_content">
 
             <ImageView
-
                 android:id="@+id/nightModeIcon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:padding="0dp"
-
                 android:src="@drawable/night_mode1" />
             <TextView
                 android:layout_marginStart="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Night Mode"
+                android:text="@string/night_mode"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/nightModeIcon" />
-
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/nightmodeSwitch"
                 android:layout_width="wrap_content"
@@ -133,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Notifications"
+                android:text="@string/notifications"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/notificationIcon" />
@@ -164,7 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Text Size"
+                android:text="@string/text_size"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/textSizeIcon" />
@@ -198,7 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Language"
+                android:text="@string/language"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/languageIcon" />
@@ -240,7 +237,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Send us a message"
+                android:text="@string/send_us_a_message"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/messageIcon" />
@@ -270,7 +267,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="About Us"
+                android:text="@string/about_us"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:layout_toEndOf="@+id/aboutUsIcon" />
@@ -292,25 +289,24 @@
         android:layout_marginTop="40dp"
         android:orientation="vertical"
         android:padding="15dp">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/logoutIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="7dp"
-                android:src="@drawable/exit" />
-            <TextView
-                android:layout_marginStart="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="Log Out"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:layout_toEndOf="@+id/logoutIcon" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/logoutIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="7dp"
+            android:src="@drawable/exit" />
+        <TextView
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/log_out"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/logoutIcon" />
         </RelativeLayout>
-
     </LinearLayout>
 </LinearLayout>

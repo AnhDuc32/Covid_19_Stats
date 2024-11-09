@@ -13,12 +13,20 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import nl.bryanderidder.themedtogglebuttongroup.ThemedButton;
 import nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -27,9 +35,15 @@ import com.github.mikephil.charting.formatter.ValueFormatter;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Currency;
+import java.util.Iterator;
+import java.util.List;
 
 public class StatsFragment extends Fragment {
 
@@ -37,6 +51,14 @@ public class StatsFragment extends Fragment {
     private Spinner spinner;
     private PieChart pieChart;
     private ThemedToggleButtonGroup toggleButton;
+    private TextView totalCases;
+    private TextView activeCases;
+    private TextView recovered;
+    private TextView deaths;
+
+    private String globalDailyData = "https://disease.sh/v3/covid-19/historical/all?lastdays=all";
+    private String vietnamDailyData = "https://orange-crabs-scream.loca.lt/daily";
+    private int selectedBtnId = R.id.btnGlobal;
 
     public StatsFragment() {
         // Required empty public constructor
@@ -51,87 +73,77 @@ public class StatsFragment extends Fragment {
         lineChart = view.findViewById(R.id.lineChart);
         spinner = view.findViewById(R.id.spinner);
         toggleButton = view.findViewById(R.id.toggleButton);
+        totalCases = view.findViewById(R.id.total_cases);
+        activeCases = view.findViewById(R.id.active_cases);
+        recovered = view.findViewById(R.id.recovered);
+        deaths = view.findViewById(R.id.deaths);
 
         setupToggleButton();
-        setupPieChart();
         setupSpinner();
-        setupChart("total_cases");
+        fetchDailyData("total_cases", globalDailyData);
         return view;
     }
 
     private void setupToggleButton() {
+        fetchData("https://disease.sh/v3/covid-19/all");
         toggleButton.selectButton(R.id.btnGlobal);
         toggleButton.setOnSelectListener(new Function1<ThemedButton, Unit>() {
             @Override
             public Unit invoke(ThemedButton button) {
-                int buttonId = button.getId();
-                if (buttonId == R.id.btnGlobal) {
-                    updateDataForGlobal();
-                } else if (buttonId == R.id.btnVietnam) {
-                    updateDataForVietnam();
+                selectedBtnId = button.getId();
+                if (selectedBtnId == R.id.btnGlobal) {
+                    fetchData("https://disease.sh/v3/covid-19/all");
+                    fetchDailyData("total_cases", globalDailyData);
+                } else if (selectedBtnId == R.id.btnVietnam) {
+                    fetchData("https://disease.sh/v3/covid-19/countries/vietnam");
+                    fetchDailyData("total_cases", vietnamDailyData);
                 }
                 return Unit.INSTANCE;
             }
         });
     }
 
-    private void updateDataForGlobal(){
+    private void fetchData(String url) {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String totalCasesStr = jsonObject.getString("cases");
+                    String activeCasesStr = jsonObject.getString("active");
+                    String recoveredStr = jsonObject.getString("recovered");
+                    String deathStr = jsonObject.getString("deaths");
+
+                    totalCases.setText(totalCasesStr);
+                    activeCases.setText(activeCasesStr);
+                    recovered.setText(recoveredStr);
+                    deaths.setText(deathStr);
+
+                    updatePieChart(Integer.parseInt(recoveredStr), Integer.parseInt(activeCasesStr), Integer.parseInt(deathStr));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getActivity(), "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
+    }
+
+    private void updatePieChart(int recovered, int active, int deaths) {
         pieChart.clearChart();
-        pieChart.addPieSlice(new PieModel("Recovered",50,Color.parseColor("#00BFA6")));
-        pieChart.addPieSlice(new PieModel("Active",30,Color.parseColor("#09B5FF")));
-        pieChart.addPieSlice(new PieModel("Deaths",20,Color.parseColor("#FF575F")));
+        pieChart.addPieSlice(new PieModel("Recovered", recovered, Color.parseColor("#00BFA6")));
+        pieChart.addPieSlice(new PieModel("Active", active, Color.parseColor("#09B5FF")));
+        pieChart.addPieSlice(new PieModel("Deaths", deaths, Color.parseColor("#FF575F")));
         pieChart.startAnimation();
 
-        String selectedStatistic = spinner.getSelectedItem().toString().toLowerCase().replace(" ","_");
-        setupChart(selectedStatistic);
-    }
-
-    private void updateDataForVietnam() {
-        pieChart.clearChart();
-        pieChart.addPieSlice(new PieModel("Recovered",100,Color.parseColor("#00BFA6")));
-        pieChart.addPieSlice(new PieModel("Active",60,Color.parseColor("#09B5FF")));
-        pieChart.addPieSlice(new PieModel("Deaths",40,Color.parseColor("#FF575F")));
-        pieChart.startAnimation();
-
-        String selectedStatistic = spinner.getSelectedItem().toString().toLowerCase().replace(" ","_");
-        setupChart(selectedStatistic);
-    }
-
-    private void setupChartForVietnam(String statistics){
-        ArrayList<Entry> entries = new ArrayList<>();
-        switch (statistics){
-            case "total_cases":
-                entries.add(new Entry(0, 500));
-                entries.add(new Entry(1, 1000));
-                entries.add(new Entry(2, 750));
-                entries.add(new Entry(3, 1500));
-                entries.add(new Entry(4, 1250));
-                entries.add(new Entry(5, 2000));
-                entries.add(new Entry(6, 1750));
-                break;
-        }
-        updateLineChart(entries);
-    }
-
-    private void updateLineChart(ArrayList<Entry> entries){
-        LineDataSet dataSet = new LineDataSet(entries,"Statistics");
-        dataSet.setColor(Color.BLUE);
-        dataSet.setValueTextColor(Color.BLACK);
-        dataSet.setDrawCircles(true);
-        dataSet.setDrawValues(true);
-
-        LineData lineData = new LineData(dataSet);
-        lineChart.setData(lineData);
-        lineChart.invalidate();
-    }
-
-    private void setupPieChart(){
-        pieChart.addPieSlice(new PieModel("Recovered",50,Color.parseColor("#00BFA6")));
-        pieChart.addPieSlice(new PieModel("Active",30,Color.parseColor("#09B5FF")));
-        pieChart.addPieSlice(new PieModel("Deaths",20,Color.parseColor("#FF575F")));
-        pieChart.setUsePieRotation(true);
-        pieChart.setDrawValueInPie(true);
-        pieChart.startAnimation();
+        String selectedStatistic = spinner.getSelectedItem().toString().toLowerCase().replace(" ", "_");
+        String url = (selectedBtnId == R.id.btnGlobal) ? globalDailyData : vietnamDailyData;
+        fetchDailyData(selectedStatistic, url);
     }
 
     private void setupSpinner() {
@@ -144,7 +156,8 @@ public class StatsFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedStatistic = statistics[position].toLowerCase().replace(" ", "_");
-                setupChart(selectedStatistic);
+                String url = (selectedBtnId == R.id.btnGlobal) ? globalDailyData : vietnamDailyData;
+                fetchDailyData(selectedStatistic, url);
             }
 
             @Override
@@ -153,52 +166,85 @@ public class StatsFragment extends Fragment {
         });
     }
 
-    private void setupChart(String statistics) {
-        ArrayList<Entry> entries = new ArrayList<>();
-        switch (statistics) {
-            case "total_cases":
-                entries.add(new Entry(0, 1000));
-                entries.add(new Entry(1, 2000));
-                entries.add(new Entry(2, 1500));
-                entries.add(new Entry(3, 3000));
-                entries.add(new Entry(4, 2500));
-                entries.add(new Entry(5, 4000));
-                entries.add(new Entry(6, 3500));
-                break;
-            case "recovered":
-                entries.add(new Entry(0, 800));
-                entries.add(new Entry(1, 1800));
-                entries.add(new Entry(2, 1200));
-                entries.add(new Entry(3, 2500));
-                entries.add(new Entry(4, 2000));
-                entries.add(new Entry(5, 2800));
-                entries.add(new Entry(6, 1500));
-                break;
-            case "deaths":
-                entries.add(new Entry(0, 50));
-                entries.add(new Entry(1, 100));
-                entries.add(new Entry(2, 75));
-                entries.add(new Entry(3, 150));
-                entries.add(new Entry(4, 120));
-                entries.add(new Entry(5, 200));
-                entries.add(new Entry(6, 250));
-                break;
-            case "active_cases":
-                entries.add(new Entry(0, 150));
-                entries.add(new Entry(1, 100));
-                entries.add(new Entry(2, 200));
-                entries.add(new Entry(3, 350));
-                entries.add(new Entry(4, 250));
-                entries.add(new Entry(5, 400));
-                entries.add(new Entry(6, 180));
-                break;
-        }
+    private void fetchDailyData(String statistics, String url) {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONObject casesData = jsonObject.getJSONObject("cases");
+                    JSONObject deathsData = jsonObject.getJSONObject("deaths");
+                    JSONObject recoveredData = jsonObject.getJSONObject("recovered");
 
-        LineDataSet dataSet = new LineDataSet(entries, "Statistics");
+                    ArrayList<Entry> entries = new ArrayList<>();
+                    JSONObject statData;
+                    List<String> dateLabels = new ArrayList<>();
+
+                    switch (statistics) {
+                        case "total_cases":
+                            statData = casesData;
+                            break;
+                        case "deaths":
+                            statData = deathsData;
+                            break;
+                        case "recovered":
+                            statData = recoveredData;
+                            break;
+                        case "active_cases":
+                            statData = new JSONObject();
+                            Iterator<String> dates = casesData.keys();
+                            while (dates.hasNext()) {
+                                String date = dates.next();
+                                int totalCases = casesData.has(date) ? casesData.getInt(date) : 0;
+                                int deaths = deathsData.has(date) ? deathsData.getInt(date) : 0;
+                                int recovered = recoveredData.has(date) ? recoveredData.getInt(date) : 0;
+                                int activeCases = totalCases - (deaths + recovered);
+                                statData.put(date, activeCases);
+                            }
+                            break;
+                        default:
+                            statData = new JSONObject();
+                    }
+
+                    Iterator<String> keys = statData.keys();
+                    int index = 0;
+
+                    while (keys.hasNext()) {
+                        String key = keys.next();
+                        int value = statData.getInt(key);
+                        dateLabels.add(key);
+                        entries.add(new Entry(index++, value));
+                    }
+
+                    if (url.contains("disease")) {
+                        updateChart(entries, statistics);
+                    } else {
+                        updateChartVietnam(entries, statistics, dateLabels);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getActivity(), "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
+    }
+
+
+
+    private void updateChart(ArrayList<Entry> entries, String statistics) {
+        LineDataSet dataSet = new LineDataSet(entries, statistics);
         dataSet.setColor(Color.BLUE);
         dataSet.setValueTextColor(Color.BLACK);
         dataSet.setDrawCircles(true);
-        dataSet.setDrawValues(true);
+        dataSet.setDrawValues(false);
 
         LineData lineData = new LineData(dataSet);
         lineChart.getLegend().setEnabled(false);
@@ -211,7 +257,7 @@ public class StatsFragment extends Fragment {
         lineChart.getXAxis().setDrawGridLines(false);
         lineChart.getAxisRight().setEnabled(false);
 
-        final String[] daysOfWeek = new String[]{"Mon", "Tues", "Wed", "Thur", "Fri", "Sat", "Sun"};
+        final String[] daysOfWeek = new String[]{"2020/1", "2021/8", "2023/3"};
         ValueFormatter xAxisFormatter = new ValueFormatter() {
             @Override
             public String getFormattedValue(float value) {
@@ -220,6 +266,43 @@ public class StatsFragment extends Fragment {
         };
         lineChart.getXAxis().setValueFormatter(xAxisFormatter);
         lineChart.getXAxis().setGranularity(1f);
+        lineChart.getXAxis().setLabelCount(3, true);
+    }
+
+    private void updateChartVietnam(ArrayList<Entry> entries, String statistics, List<String> dateLabels) {
+        LineDataSet dataSet = new LineDataSet(entries, statistics);
+        dataSet.setColor(Color.RED); // Use a different color for Vietnam data
+        dataSet.setValueTextColor(Color.BLACK);
+        dataSet.setDrawCircles(true);
+        dataSet.setDrawValues(false); // Hide values above data points
+
+        LineData lineData = new LineData(dataSet);
+        lineChart.getLegend().setEnabled(false);
+        lineChart.setData(lineData);
+        lineChart.invalidate();
+        lineChart.getDescription().setEnabled(false);
+        lineChart.getXAxis().setPosition(com.github.mikephil.charting.components.XAxis.XAxisPosition.BOTTOM);
+        lineChart.getAxisLeft().setDrawGridLines(false);
+        lineChart.getAxisRight().setDrawGridLines(false);
+        lineChart.getXAxis().setDrawGridLines(false);
+        lineChart.getAxisRight().setEnabled(false);
+
+        // Use dynamic dates for x-axis labels, specific to Vietnam
+        final String[] daysOfWeekVietnam = dateLabels.stream().map(date -> date.substring(0, 7).replace("-", "/").replace("/0", "/")).toArray(String[]::new);
+        ValueFormatter xAxisFormatter = new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value) {
+                int index = (int) value;
+                if (index >= 0 && index < daysOfWeekVietnam.length) {
+                    return daysOfWeekVietnam[index];
+                } else {
+                    return "";
+                }
+            }
+        };
+        lineChart.getXAxis().setValueFormatter(xAxisFormatter);
+        lineChart.getXAxis().setGranularity(1f);
+        lineChart.getXAxis().setLabelCount(Math.min(2, daysOfWeekVietnam.length), true);
     }
 }
 
